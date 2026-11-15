@@ -27,7 +27,7 @@
 
 ### Core Technology Stack
 - **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion
-- **Backend & API:** Python 3.12, Django 5, Django REST Framework (DRF), FastAPI
+- **Backend & API:** Python, Django, Django REST Framework (DRF), FastAPI
 - **Databases & Queues:** PostgreSQL, MySQL, Redis, Celery
 - **Infrastructure & Security:** Docker, Cloudflare WAF/CDN/SSL, GCP, AWS, OCI, OWASP Top 10 hardening
 - **Testing & QA:** PyTest, Selenium end-to-end automation

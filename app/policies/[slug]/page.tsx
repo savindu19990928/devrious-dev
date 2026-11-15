@@ -135,7 +135,7 @@ async function PolicyContent({
       </PageBanner>
 
       <div className="mx-auto mt-10 w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-      <article className="rounded-3xl border border-black/8 bg-white p-8 shadow-sm sm:p-12">
+      <article className="rounded-3xl border border-black/8 bg-white p-5 shadow-sm sm:p-12">
         <div className="mb-8 flex flex-wrap gap-2 border-b border-black/8 pb-6">
           {POLICY_DOCS.map((p) => (
             <Link

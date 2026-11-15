@@ -45,36 +45,37 @@ export default function ServicesPage() {
       <PageBanner
         image="/images/banners/banner-services.jpg"
         imageAlt="Devrious software engineers reviewing a system architecture diagram"
-        mobileFocus="object-[75%_center]"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-          Services · 01 — 05
-        </span>
-        <h1 className="mt-5 max-w-3xl font-display text-3xl font-extrabold leading-[1.06] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-          Engineering for every stage of your business.
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg">
-          Custom web and software development, APIs and AI — designed around
-          your process, tested thoroughly and hosted on GCP, OCI or AWS.
-        </p>
+        <div className="max-w-2xl lg:max-w-[50%]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+            Services · 01 — 05
+          </span>
+          <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.06] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
+            Engineering for every stage of your business.
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg">
+            Custom web and software development, APIs and AI — designed around
+            your process, tested thoroughly and hosted on GCP, OCI or AWS.
+          </p>
+        </div>
       </PageBanner>
 
       {/* Services List */}
-      <section className="mt-14">
-        <div className="mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
+      <section className="mt-12 sm:mt-14">
+        <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
           {SERVICES.map((service, idx) => (
             <Reveal key={service.slug} delay={idx * 0.05}>
               <article className="group overflow-hidden rounded-3xl border border-black/8 bg-white transition-all duration-300 hover:border-[#F92C53]/40 hover:shadow-[0_24px_60px_-24px_rgba(249,44,83,0.18)]">
                 <div className="grid lg:grid-cols-12">
                   {/* Editorial Visual Column */}
-                  <div className="relative min-h-[240px] overflow-hidden bg-[#2E0308] lg:col-span-4">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-[#2E0308] sm:aspect-[16/9] lg:col-span-5 lg:aspect-auto lg:min-h-[320px]">
                     <img
                       src={service.editorialImage}
                       alt={service.title}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
                     <span className="absolute left-5 top-5 rounded-full border border-white/25 bg-black/45 px-3 py-1 font-mono text-xs font-bold text-white backdrop-blur-md">
@@ -83,7 +84,7 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Content Column */}
-                  <div className="p-6 sm:p-10 lg:col-span-8">
+                  <div className="p-6 sm:p-10 lg:col-span-7">
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h2 className="font-display text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl">
                         {service.title}

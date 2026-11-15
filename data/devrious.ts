@@ -176,7 +176,7 @@ export const SERVICES: ServiceItem[] = [
       "Full visibility across orders, stock, and staff activity",
       "Software that scales as your team and branches grow",
     ],
-    technologies: ["Python 3.12", "Django 5", "PostgreSQL", "React", "Docker", "Redis"],
+    technologies: ["Python", "Django", "PostgreSQL", "React", "Docker", "Redis"],
     deliverables: [
       "Custom web/desktop-accessible business system",
       "Role-based staff accounts & training",
@@ -205,7 +205,7 @@ export const SERVICES: ServiceItem[] = [
     ],
     features: [
       "Versioned Django REST Framework & OpenAPI documentation",
-      "JWT / OAuth2 authentication & rate-limiting",
+      "JWT / OAuth authentication & rate-limiting",
       "Payment gateway, SMS, WhatsApp & courier integrations",
       "Background task queues with Celery & Redis",
     ],
@@ -1064,8 +1064,8 @@ export const TECH_STACK = [
   { name: "TypeScript", category: "Language" },
   { name: "Tailwind CSS", category: "Styling" },
   { name: "Framer Motion", category: "Motion" },
-  { name: "Python 3.12", category: "Backend" },
-  { name: "Django 5 & DRF", category: "API" },
+  { name: "Python", category: "Backend" },
+  { name: "Django & DRF", category: "API" },
   { name: "PostgreSQL & MySQL", category: "Database" },
   { name: "Redis & Celery", category: "Queues" },
   { name: "Docker", category: "Containers" },

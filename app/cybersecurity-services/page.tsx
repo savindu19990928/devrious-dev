@@ -9,6 +9,7 @@ import {
 } from "@/data/seo";
 import { CybersecurityPackages } from "@/components/CybersecurityPackages";
 import { Reveal } from "@/components/Reveal";
+import { PageBanner } from "@/components/PageBanner";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Cybersecurity, Penetration Testing & Secure Code Review in Sri Lanka",
@@ -42,57 +43,41 @@ export default function CybersecurityServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(cyberSchema) }}
       />
-      {/* Hero Banner with Mobile-Visible Framing */}
-      <section className="px-3 pt-4 sm:px-6">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#2E0308] text-white shadow-[0_14px_45px_rgba(0,0,0,0.18)]">
-          {/* Mobile image header */}
-          <div className="relative aspect-[16/10] w-full overflow-hidden md:hidden">
-            <img
-              src="/images/banners/cybersecurity-banner.jpg"
-              alt="Devrious cybersecurity shield editorial visual"
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2E0308] via-transparent to-black/20" />
-          </div>
+      {/* Hero Banner with Mobile/Tablet/Desktop Responsive Framing */}
+      <PageBanner
+        image="/images/banners/cybersecurity-banner.jpg"
+        imageAlt="Devrious cybersecurity shield editorial visual"
+      >
+        <div className="max-w-2xl lg:max-w-[54%]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+            Cybersecurity services
+          </span>
+          <h1 className="mt-4 font-display text-3xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
+            Find the weaknesses before attackers do
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+            Penetration testing and secure code review for websites, APIs and
+            business systems — delivered by engineers who build production
+            software every day.
+          </p>
 
-          {/* Desktop background */}
-          <img
-            src="/images/banners/cybersecurity-banner.jpg"
-            alt="Devrious cybersecurity shield editorial visual"
-            className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-right md:block"
-          />
-          <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/85 via-[#2E0308]/55 to-transparent md:block" />
-
-          <div className="relative z-10 grid gap-10 px-6 py-10 sm:px-12 sm:py-16 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-12 lg:px-16 lg:py-20">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-                Cybersecurity services
-              </span>
-              <h1 className="mt-4 font-display text-3xl font-extrabold leading-[1.08] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
-                Find the weaknesses before attackers do
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-                Penetration testing and secure code review for websites, APIs
-                and business systems — delivered by engineers who build
-                production software every day.
-              </p>
-            </div>
-
-            <ul className="space-y-4 rounded-2xl border border-white/15 bg-black/45 p-6 text-sm text-white/90 backdrop-blur-md">
-              {HIGHLIGHTS.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <li key={item.text} className="flex items-start gap-3">
-                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#00C9A7]" />
-                    <span>{item.text}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-3">
+            {HIGHLIGHTS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li
+                  key={item.text}
+                  className="flex items-start gap-2.5 rounded-2xl border border-white/15 bg-black/50 p-3.5 text-xs leading-snug text-white/90 backdrop-blur-md"
+                >
+                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#00C9A7]" />
+                  <span>{item.text}</span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-      </section>
+      </PageBanner>
 
       {/* Packages */}
       <section className="mx-auto mt-14 w-full max-w-7xl px-6 lg:px-8">
@@ -172,7 +157,7 @@ export default function CybersecurityServicesPage() {
             </p>
           </div>
           <Link
-            href="/contact?service=Cybersecurity%20Audit"
+            href="/contact?service=Cyber%20Security%20Services"
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#D91C40]"
           >
             <span>Request Security Scoping</span>

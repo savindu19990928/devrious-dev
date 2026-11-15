@@ -18,6 +18,7 @@ import {
   SERVICE_FAQS,
   SERVICES,
 } from "@/data/devrious";
+import { PageBanner } from "@/components/PageBanner";
 import {
   buildPageMetadata,
   buildServiceDetailSchema,
@@ -92,95 +93,70 @@ async function ServiceDetailContent({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
       />
       {/* Mobile-First Full-Bleed Obsidian + Crimson Editorial Hero */}
-      <section className="px-3 pt-3 sm:px-6 sm:pt-4">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#2E0308] text-white shadow-[0_24px_80px_-24px_rgba(46,3,8,0.5)] sm:rounded-3xl">
-          {/* Mobile top visual so core subject is never cropped */}
-          <div className="relative aspect-[16/10] w-full overflow-hidden md:hidden">
-            <img
-              src={service.heroImage}
-              alt={service.title}
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#2E0308]/35 to-[#2E0308]" />
+      <PageBanner image={service.heroImage} imageAlt={service.title}>
+        <div className="max-w-3xl lg:max-w-[58%]">
+          <Link
+            href="/services"
+            className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>All Services</span>
+          </Link>
+
+          <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-6">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#F92C53]/40 bg-[#F92C53]/20 px-3.5 py-1 font-mono text-xs font-semibold text-[#ffd6de] backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#F92C53]" />
+              SERVICE {service.number}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/40 px-3.5 py-1 font-mono text-xs font-medium text-[#99f3e4]">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#00C9A7]" />
+              GCP · OCI · AWS · Cloudflare
+            </span>
           </div>
 
-          {/* Desktop background */}
-          <div className="pointer-events-none absolute inset-0 hidden md:block">
-            <img
-              src={service.heroImage}
-              alt={service.title}
-              className="h-full w-full object-cover object-right opacity-85"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#090204] via-[#2E0308]/90 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#090204]/80 via-transparent to-black/25" />
-          </div>
+          <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {service.title}
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+            {service.tagline}
+          </p>
 
-          <div className="relative z-10 px-5 pb-10 pt-4 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/services"
-              className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
+              href={`/contact?service=${encodeURIComponent(service.title)}`}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
             >
-              <ArrowLeft className="h-3.5 w-3.5" />
-              <span>All Services</span>
+              <span>Discuss Your Project</span>
+              <ArrowRight className="h-4 w-4" />
             </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            >
+              <span>See Client Work</span>
+            </Link>
+          </div>
 
-            <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#F92C53]/40 bg-[#F92C53]/20 px-3.5 py-1 font-mono text-xs font-semibold text-[#ffd6de] backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F92C53]" />
-                SERVICE {service.number}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/40 px-3.5 py-1 font-mono text-xs font-medium text-[#99f3e4]">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#00C9A7]" />
-                GCP · OCI · AWS · Cloudflare
-              </span>
+          {/* Starting Price Bar kept inside left column so right hero visual stays 100% unobstructed */}
+          <div className="mt-7 flex flex-col justify-between gap-4 rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur-md sm:flex-row sm:items-center sm:p-5">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-white/60">
+                Starting From
+              </p>
+              <p className="mt-1 font-display text-2xl font-extrabold text-white sm:text-3xl">
+                LKR {service.priceLkr.toLocaleString()}
+              </p>
+              <p className="mt-0.5 font-mono text-xs text-[#99f3e4]">
+                ≈ ${approxUsd.toLocaleString()} USD · Final price depends on scope
+              </p>
             </div>
-
-            <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:items-end">
-              <div className="lg:col-span-8">
-                <h1 className="font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-7xl">
-                  {service.title}
-                </h1>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:text-xl">
-                  {service.tagline}
-                </p>
-
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link
-                    href={`/contact?service=${encodeURIComponent(service.title)}`}
-                    className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
-                  >
-                    <span>Discuss Your Project</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/portfolio"
-                    className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
-                  >
-                    <span>See Client Work</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Starting Price Card */}
-              <div className="rounded-2xl border border-white/15 bg-black/55 p-5 backdrop-blur-md sm:p-6 lg:col-span-4">
-                <p className="font-mono text-xs uppercase tracking-widest text-white/60">
-                  Starting From
-                </p>
-                <p className="mt-1.5 font-display text-3xl font-extrabold text-white sm:text-4xl">
-                  LKR {service.priceLkr.toLocaleString()}
-                </p>
-                <p className="mt-1 font-mono text-xs text-[#99f3e4]">
-                  ≈ ${approxUsd.toLocaleString()} USD · Final price depends on scope
-                </p>
-                <div className="mt-4 border-t border-white/10 pt-3 text-xs leading-relaxed text-white/75">
-                  Includes written specification, weekly staging demos, PyTest &
-                  Selenium QA, and cloud deployment.
-                </div>
-              </div>
-            </div>
+            <p className="max-w-xs text-xs leading-relaxed text-white/75 sm:border-l sm:border-white/15 sm:pl-4">
+              Includes written specification, weekly staging demos, PyTest &amp;
+              Selenium QA, and cloud deployment.
+            </p>
           </div>
         </div>
-      </section>
+      </PageBanner>
 
       {/* Executive Overview & What's Included */}
       <section className="mx-auto mt-8 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">

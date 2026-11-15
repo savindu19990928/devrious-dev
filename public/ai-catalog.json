@@ -50,7 +50,7 @@
       "url": "https://devrious.lk/services/custom-software-development",
       "inquiryUrl": "https://devrious.lk/contact?service=Custom%20Software%20Development",
       "tagline": "Business software shaped around how your team actually works.",
-      "technologies": ["Python 3.12", "Django 5", "PostgreSQL", "React", "Docker", "Redis"]
+      "technologies": ["Python", "Django", "PostgreSQL", "React", "Docker", "Redis"]
     },
     {
       "slug": "api-development",

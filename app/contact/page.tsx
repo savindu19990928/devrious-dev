@@ -39,24 +39,26 @@ export default function ContactPage() {
         image="/images/banners/banner-contact.jpg"
         imageAlt="Contact Devrious software engineering team in Colombo, Sri Lanka"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-          Colombo Studio
-        </span>
-        <h1 className="mt-5 max-w-3xl font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Let’s build something meaningful.
-        </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-          Tell us about your idea. Let’s turn it into something real.
-        </p>
+        <div className="max-w-2xl lg:max-w-[54%]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+            Colombo Studio
+          </span>
+          <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            Let’s build something meaningful.
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg">
+            Tell us about your idea. Let’s turn it into something real.
+          </p>
+        </div>
       </PageBanner>
 
-      <section className="mx-auto mt-12 w-full max-w-7xl px-6 lg:px-8">
+      <section className="mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Suspense
               fallback={
-                <div className="h-96 rounded-3xl border border-black/10 bg-white p-8" />
+                <div className="h-96 rounded-3xl border border-black/10 bg-white p-6 sm:p-8" />
               }
             >
               <ContactForm />
@@ -64,7 +66,7 @@ export default function ContactPage() {
           </div>
 
           <aside className="space-y-6 lg:col-span-5">
-            <div className="rounded-3xl border border-black/10 bg-[#030303] p-8 text-white">
+            <div className="rounded-3xl border border-black/10 bg-[#030303] p-6 text-white sm:p-8">
               <h2 className="font-display text-xl font-bold">
                 Direct Contact
               </h2>

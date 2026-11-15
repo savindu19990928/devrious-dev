@@ -92,76 +92,79 @@ async function PreBuildDetailContent({
         imageAlt={`${product.name} — ready-to-deploy software banner`}
         mobileFocus="object-center"
       >
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <Link
-            href="/pre-builts"
-            className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            <span>All 10 Pre-Builts</span>
-          </Link>
+        <div className="max-w-3xl lg:max-w-[58%]">
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/pre-builts"
+              className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>All 10 Pre-Builts</span>
+            </Link>
 
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#00C9A7]/35 bg-[#00C9A7]/15 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-            {product.category}
-          </span>
-        </div>
-
-        <div className="mt-7 grid gap-8 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <h1 className="font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              {product.name}
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-xl">
-              {product.tagline}
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href={`/contact?product=${encodeURIComponent(product.name)}&intent=demo`}
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
-              >
-                <span>Request a Live Demo</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href={`/contact?product=${encodeURIComponent(product.name)}&intent=quote`}
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/25 bg-black/40 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
-              >
-                <span>Get Deployment Quote</span>
-              </Link>
-              {product.liveUrl && (
-                <a
-                  href={product.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[48px] items-center justify-center gap-1.5 rounded-xl border border-[#00C9A7]/40 bg-[#00C9A7]/15 px-5 py-3.5 text-sm font-semibold text-[#99f3e4] backdrop-blur-md transition-colors hover:bg-[#00C9A7]/25"
-                >
-                  <span>Live Demo</span>
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              )}
-            </div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#00C9A7]/35 bg-[#00C9A7]/15 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+              {product.category}
+            </span>
           </div>
 
-          {/* Pricing Card */}
-          <div className="rounded-2xl border border-white/15 bg-black/55 p-5 backdrop-blur-md sm:p-6 lg:col-span-4">
-            <p className="font-mono text-xs uppercase tracking-widest text-white/60">
-              One-Time License & Setup
-            </p>
-            <p className="mt-2 font-display text-3xl font-extrabold text-white sm:text-4xl">
-              LKR {product.priceLkr.toLocaleString()}
-            </p>
-            <p className="mt-1 font-mono text-xs text-[#99f3e4]">
-              ≈ ${approxUsd.toLocaleString()} USD · Customisable to your workflow
-            </p>
-            <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/10 pt-4">
+          <h1 className="mt-6 font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {product.name}
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+            {product.tagline}
+          </p>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href={`/contact?product=${encodeURIComponent(product.name)}&intent=demo`}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
+            >
+              <span>Request a Live Demo</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href={`/contact?product=${encodeURIComponent(product.name)}&intent=quote`}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/25 bg-black/40 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
+            >
+              <span>Get Deployment Quote</span>
+            </Link>
+            {product.liveUrl && (
+              <a
+                href={product.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[48px] items-center justify-center gap-1.5 rounded-xl border border-[#00C9A7]/40 bg-[#00C9A7]/15 px-5 py-3.5 text-sm font-semibold text-[#99f3e4] backdrop-blur-md transition-colors hover:bg-[#00C9A7]/25"
+              >
+                <span>Live Demo</span>
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+          </div>
+
+          {/* Pricing Bar kept inside left column so right visual subject stays 100% unobstructed */}
+          <div className="mt-7 flex flex-col justify-between gap-4 rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur-md sm:flex-row sm:items-center sm:p-5">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-white/60">
+                One-Time License &amp; Setup
+              </p>
+              <p className="mt-1 font-display text-2xl font-extrabold text-white sm:text-3xl">
+                LKR {product.priceLkr.toLocaleString()}
+              </p>
+              <p className="mt-0.5 font-mono text-xs text-[#99f3e4]">
+                ≈ ${approxUsd.toLocaleString()} USD · Customisable to your workflow
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-2 border-t border-white/10 pt-3 min-[460px]:grid-cols-3 min-[460px]:gap-3 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
               {product.highlights.map((h) => (
-                <div key={h.label}>
+                <div
+                  key={h.label}
+                  className="flex items-center justify-between gap-2 min-[460px]:block"
+                >
                   <p className="font-mono text-[10px] uppercase tracking-wider text-white/50">
                     {h.label}
                   </p>
-                  <p className="mt-0.5 text-xs font-bold text-white">
+                  <p className=" text-xs font-bold text-white min-[460px]:mt-0.5">
                     {h.value}
                   </p>
                 </div>
@@ -191,7 +194,7 @@ async function PreBuildDetailContent({
             <img
               src={product.screenshot}
               alt={`${product.name} screenshot`}
-              className="w-full object-cover object-top"
+              className="block h-auto w-full object-contain"
             />
           </div>
         </section>

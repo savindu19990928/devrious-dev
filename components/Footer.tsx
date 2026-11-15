@@ -4,7 +4,10 @@ import { COMPANY_INFO, POLICY_DOCS, SERVICES } from "@/data/devrious";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#030303] text-white">
+    <footer
+      id="site-footer"
+      className="border-t border-white/10 bg-[#030303] text-white"
+    >
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand Column */}
@@ -134,18 +137,6 @@ export function Footer() {
                 {policy.title}
               </Link>
             ))}
-            <a
-              href="/sitemap.xml"
-              className="text-white/65 transition-colors hover:text-[#00C9A7]"
-            >
-              Sitemap
-            </a>
-            <a
-              href="/llms.txt"
-              className="text-white/65 transition-colors hover:text-[#00C9A7]"
-            >
-              LLMs.txt
-            </a>
           </div>
           <p>{COMPANY_INFO.hours}</p>
         </div>

@@ -22,13 +22,19 @@ export function PreBuildsMarketplace() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const qParam = params.get("q");
-    const catParam = params.get("category");
-    if (qParam) setQuery(qParam);
-    if (catParam && CATEGORIES.includes(catParam as "All" | PreBuildProduct["category"])) {
-      setCategory(catParam as "All" | PreBuildProduct["category"]);
-    }
+    const syncFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const qParam = params.get("q");
+      const catParam = params.get("category");
+      if (qParam) setQuery(qParam);
+      if (
+        catParam &&
+        CATEGORIES.includes(catParam as "All" | PreBuildProduct["category"])
+      ) {
+        setCategory(catParam as "All" | PreBuildProduct["category"]);
+      }
+    };
+    const timer = window.setTimeout(syncFromUrl, 0);
 
     const onAgentFilter = (e: Event) => {
       const detail = (e as CustomEvent<{ query?: string; category?: string }>).detail;
@@ -42,7 +48,10 @@ export function PreBuildsMarketplace() {
     };
 
     window.addEventListener("devrious:filter-prebuilts", onAgentFilter);
-    return () => window.removeEventListener("devrious:filter-prebuilts", onAgentFilter);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("devrious:filter-prebuilts", onAgentFilter);
+    };
   }, []);
 
   const filtered = useMemo(() => {
@@ -151,10 +160,10 @@ export function PreBuildsMarketplace() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, delay: idx * 0.03 }}
-              className="group flex flex-col justify-between rounded-3xl border border-black/8 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#F92C53]/45 hover:shadow-[0_24px_60px_-24px_rgba(249,44,83,0.18)]"
+              className="group flex flex-col justify-between rounded-3xl border border-black/8 bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#F92C53]/45 hover:shadow-[0_24px_60px_-24px_rgba(249,44,83,0.18)] sm:p-7"
             >
               <div>
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E6FAF6] px-3 py-1 font-mono text-[11px] font-semibold text-[#079669]">
                     <Sparkles className="h-3 w-3" />
                     {product.category}
@@ -164,13 +173,13 @@ export function PreBuildsMarketplace() {
                   </span>
                 </div>
 
-                <div className="mt-4 overflow-hidden rounded-2xl border border-black/8 bg-[#2E0308]">
+                <div className="mt-4 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-black/8 bg-[#2E0308]">
                   <img
                     src={product.bannerImage}
                     alt={`${product.name} preview`}
                     loading="lazy"
                     decoding="async"
-                    className="h-40 w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
 
@@ -204,7 +213,7 @@ export function PreBuildsMarketplace() {
                   </span>
                 </div>
 
-                <div className="mt-4 grid grid-cols-2 gap-2.5">
+                <div className="mt-4 grid grid-cols-1 gap-2.5 min-[380px]:grid-cols-2">
                   <Link
                     href={`/pre-builts/${product.slug}`}
                     className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#111827] px-3.5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#F92C53]"

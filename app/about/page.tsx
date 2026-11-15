@@ -75,23 +75,25 @@ export default function AboutPage() {
         image="/images/banners/banner-about.jpg"
         imageAlt="Devrious software engineering studio in Colombo, Sri Lanka"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-          Founded 2024 · Colombo, Sri Lanka
-        </span>
-        <h1 className="mt-5 max-w-3xl font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Technology with purpose. Innovation with direction.
-        </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-          Devrious is a software company founded in Colombo, Sri Lanka in
-          2024. We design, engineer, and secure software that solves real
-          operational problems — whether built from scratch or deployed from
-          our proven Pre-Built suite.
-        </p>
+        <div className="max-w-2xl lg:max-w-[54%]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/50 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4] backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+            Founded 2024 · Colombo, Sri Lanka
+          </span>
+          <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            Technology with purpose. Innovation with direction.
+          </h1>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg">
+            Devrious is a software company founded in Colombo, Sri Lanka in
+            2024. We design, engineer, and secure software that solves real
+            operational problems — whether built from scratch or deployed from
+            our proven Pre-Built suite.
+          </p>
+        </div>
       </PageBanner>
 
       {/* Philosophy & Approach */}
-      <section className="mx-auto mt-14 w-full max-w-7xl px-6 lg:px-8">
+      <section className="mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-14 sm:px-6 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
@@ -100,7 +102,7 @@ export default function AboutPage() {
             },
             {
               title: "Our Technology Philosophy",
-              body: "Zero technical debt shortcuts. We pair typed React & Next.js frontends with Python 3.12, Django 5, PostgreSQL, automated PyTest/Selenium QA, and Cloudflare WAF protection.",
+              body: "Zero technical debt shortcuts. We pair typed React & Next.js frontends with Python, Django, PostgreSQL, automated PyTest/Selenium QA, and Cloudflare WAF protection.",
             },
             {
               title: "Quality & Vision",
@@ -108,7 +110,7 @@ export default function AboutPage() {
             },
           ].map((card, idx) => (
             <Reveal key={card.title} delay={idx * 0.06}>
-              <div className="h-full rounded-3xl border border-black/8 bg-white p-8">
+              <div className="h-full rounded-3xl border border-black/8 bg-white p-6 sm:p-8">
                 <span className="font-mono text-xs font-bold text-[#F92C53]">
                   0{idx + 1}
                 </span>
@@ -209,7 +211,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founders */}
-      <section className="mx-auto mt-16 w-full max-w-7xl px-6 lg:px-8">
+      <section className="mx-auto mt-14 w-full max-w-7xl px-4 sm:mt-16 sm:px-6 lg:px-8">
         <Reveal>
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#F92C53]">
             Leadership
@@ -222,7 +224,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {COMPANY_INFO.founders.map((founder, idx) => (
             <Reveal key={founder.name} delay={idx * 0.08}>
-              <article className="flex flex-col gap-6 rounded-3xl border border-black/8 bg-white p-7 sm:flex-row sm:items-center">
+              <article className="flex flex-col gap-5 rounded-3xl border border-black/8 bg-white p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-7">
                 <img
                   src={founder.photo}
                   alt={founder.name}
@@ -248,8 +250,8 @@ export default function AboutPage() {
       </section>
 
       {/* Visual Timeline */}
-      <section className="mx-auto mt-16 w-full max-w-7xl px-6 lg:px-8">
-        <div className="rounded-3xl border border-black/8 bg-white p-8 sm:p-12">
+      <section className="mx-auto mt-14 w-full max-w-7xl px-4 sm:mt-16 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-black/8 bg-white p-6 sm:p-12">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#00C9A7]">
             Journey
           </span>
@@ -257,10 +259,10 @@ export default function AboutPage() {
             How Devrious Operates
           </h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             {TIMELINE.map((item, idx) => (
               <Reveal key={item.title} delay={idx * 0.06}>
-                <div className="relative h-full rounded-2xl border border-black/8 bg-[#f7f7f8] p-6">
+                <div className="relative h-full rounded-2xl border border-black/8 bg-[#f7f7f8] p-5 sm:p-6">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E6FAF6] px-3 py-1 font-mono text-xs font-bold text-[#079669]">
                     <CheckCircle2 className="h-3.5 w-3.5" />
                     {item.year}
@@ -279,12 +281,12 @@ export default function AboutPage() {
       </section>
 
       {/* Stats & Stack */}
-      <section className="mx-auto mt-16 w-full max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <section className="mx-auto mt-14 w-full max-w-7xl px-4 sm:mt-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-4 min-[380px]:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-black/8 bg-white p-6"
+              className="rounded-2xl border border-black/8 bg-white p-5 sm:p-6"
             >
               <p className="gradient-text-brand font-display text-3xl font-extrabold">
                 {s.value}
@@ -295,7 +297,7 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-3xl border border-black/8 bg-white p-8">
+        <div className="mt-8 rounded-3xl border border-black/8 bg-white p-6 sm:p-8">
           <h2 className="font-display text-xl font-bold text-[#111827]">
             Core Technology Stack
           </h2>

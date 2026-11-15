@@ -13,27 +13,54 @@ const BUDGET_OPTIONS = [
   "Pre-Built System Inquiry",
 ];
 
+const SERVICE_OPTIONS = [
+  "Pre-Built System",
+  ...SERVICES.map((s) => s.title),
+  "Cyber Security Services",
+  "Other",
+];
+
+function resolveInitialService(rawService: string, rawProduct: string): string {
+  if (rawService) {
+    if (SERVICE_OPTIONS.includes(rawService)) return rawService;
+    if (/cyber|security|penetration|audit|code review/i.test(rawService)) {
+      return "Cyber Security Services";
+    }
+    return "Other";
+  }
+  if (rawProduct) return "Pre-Built System";
+  return SERVICES[0].title;
+}
+
 export function ContactForm() {
   const searchParams = useSearchParams();
   const initialService = searchParams.get("service") ?? "";
   const initialProduct = searchParams.get("product") ?? "";
+  const initialProject = searchParams.get("project") ?? "";
   const initialIntent = searchParams.get("intent") ?? "";
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
-  const [service, setService] = useState(
-    initialService || (initialProduct ? "Pre-Built System" : SERVICES[0].title)
+  const [service, setService] = useState(() =>
+    resolveInitialService(initialService, initialProduct)
   );
   const [budget, setBudget] = useState(
     initialProduct ? "Pre-Built System Inquiry" : BUDGET_OPTIONS[1]
   );
-  const [description, setDescription] = useState(
-    initialProduct
-      ? `Interested in ${initialIntent === "demo" ? "a demo of" : "a quote for"} ${initialProduct}.`
-      : ""
-  );
+  const [description, setDescription] = useState(() => {
+    if (initialProduct) {
+      return `Interested in ${initialIntent === "demo" ? "a demo of" : "a quote for"} ${initialProduct}.`;
+    }
+    if (initialProject) {
+      return `Interested in building a system similar to ${initialProject}.`;
+    }
+    if (initialService && !SERVICE_OPTIONS.includes(initialService)) {
+      return `Interested in ${initialService}.`;
+    }
+    return "";
+  });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -127,7 +154,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-black/8 bg-white p-7 sm:p-10"
+      className="rounded-3xl border border-black/8 bg-white p-5 sm:p-10"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -220,6 +247,8 @@ export function ContactForm() {
                 {s.title}
               </option>
             ))}
+            <option value="Cyber Security Services">Cyber Security Services</option>
+            <option value="Other">Other</option>
           </select>
         </div>
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { MotionProvider } from "@/components/MotionProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import { PageTransition } from "@/components/PageTransition";
 import { AgentBrowsingProvider } from "@/components/AgentBrowsingProvider";
 import {
@@ -177,6 +178,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div id="main-content" className="flex flex-1 flex-col">
             <PageTransition>{children}</PageTransition>
           </div>
+          <ScrollToTopButton />
           <Footer />
         </MotionProvider>
       </body>

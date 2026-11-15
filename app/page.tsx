@@ -20,6 +20,7 @@ import {
 import { HomeHero } from "@/components/HomeHero";
 import { Reveal } from "@/components/Reveal";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
+import { ShowcaseBanner } from "@/components/ShowcaseBanner";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -56,10 +57,25 @@ export default function HomePage() {
       {/* 1. Hero / Introduction */}
       <HomeHero />
 
+      {/* Animated Infinite Capability & Stack Marquee */}
+      <div className="overflow-hidden border-y border-black/8 bg-[#0a0103] py-3.5 text-white">
+        <div className="animate-marquee flex items-center gap-10 whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-white/80">
+          {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+            <span key={`${tech.name}-${i}`} className="inline-flex items-center gap-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#F92C53]" />
+              <span className="font-semibold text-white">{tech.name}</span>
+              <span className="text-white/45">
+                {"//"} {tech.category}
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* 2. About Us Preview */}
-      <section className="bg-[#f7f7f8] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Reveal className="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <section className="bg-[#f7f7f8] py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="grid gap-8 sm:gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
                 About Devrious
@@ -99,9 +115,9 @@ export default function HomePage() {
       {/* 3. Services Showcase (Loro-style Editorial Cards) */}
       <section
         id="services-showcase"
-        className="border-y border-black/8 bg-white py-20 md:py-28"
+        className="border-y border-black/8 bg-white py-16 sm:py-20 md:py-28"
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
@@ -113,27 +129,27 @@ export default function HomePage() {
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 rounded-xl border border-black/12 bg-[#f7f7f8] px-4 py-2.5 text-sm font-semibold text-[#111827] transition-colors hover:border-[#F92C53] hover:text-[#F92C53]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black/12 bg-[#f7f7f8] px-4 py-2.5 text-sm font-semibold text-[#111827] transition-colors hover:border-[#F92C53] hover:text-[#F92C53] sm:w-auto"
             >
               <span>All 5 Services</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service, idx) => (
               <Reveal key={service.slug} delay={idx * 0.05}>
                 <Link
                   href={`/services/${service.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/8 bg-[#f7f7f8] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F92C53]/45 hover:bg-white hover:shadow-[0_28px_65px_-24px_rgba(249,44,83,0.22)]"
                 >
-                  <div className="relative h-52 w-full overflow-hidden bg-[#2E0308]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#2E0308] sm:aspect-[16/9] md:aspect-auto md:h-52">
                     <img
                       src={service.homeImage}
                       alt={service.title}
                       loading="lazy"
                       decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
                     <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-black/45 px-3 py-1 font-mono text-[11px] font-semibold text-white backdrop-blur-md">
@@ -141,7 +157,7 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col justify-between p-7">
+                  <div className="flex flex-1 flex-col justify-between p-5 sm:p-7">
                     <div>
                       <h3 className="font-display text-xl font-bold tracking-tight text-[#111827]">
                         {service.title}
@@ -151,7 +167,7 @@ export default function HomePage() {
                       </p>
                     </div>
 
-                    <div className="mt-7 flex items-center justify-between border-t border-black/8 pt-4 text-xs font-semibold text-[#111827]">
+                    <div className="mt-6 flex items-center justify-between border-t border-black/8 pt-4 text-xs font-semibold text-[#111827] sm:mt-7">
                       <span>Explore service</span>
                       <ArrowUpRight className="h-4 w-4 text-[#F92C53] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </div>
@@ -164,8 +180,8 @@ export default function HomePage() {
       </section>
 
       {/* 4. Client Testimonials */}
-      <section className="bg-[#f7f7f8] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-[#f7f7f8] py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#00C9A7]">
               Client Perspectives
@@ -178,7 +194,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {TESTIMONIALS.map((item, idx) => (
               <Reveal key={item.id} delay={idx * 0.08}>
-                <article className="flex h-full flex-col justify-between rounded-3xl border border-black/8 bg-white p-8 shadow-sm">
+                <article className="flex h-full flex-col justify-between rounded-3xl border border-black/8 bg-white p-6 shadow-sm sm:p-8">
                   <div>
                     <Quote className="h-8 w-8 text-[#F92C53]" />
                     <p className="mt-5 text-base leading-relaxed text-[#3A352D]/90">
@@ -213,12 +229,12 @@ export default function HomePage() {
       </section>
 
       {/* 5. Company Statistics */}
-      <section className="border-y border-black/8 bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+      <section className="border-y border-black/8 bg-white py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-4 min-[380px]:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {STATS.map((stat, idx) => (
               <Reveal key={stat.label} delay={idx * 0.05}>
-                <div className="rounded-2xl border border-black/8 bg-[#f7f7f8] p-6">
+                <div className="h-full rounded-2xl border border-black/8 bg-[#f7f7f8] p-5 sm:p-6">
                   <p className="gradient-text-brand font-display text-3xl font-extrabold sm:text-4xl">
                     {stat.value}
                   </p>
@@ -234,8 +250,8 @@ export default function HomePage() {
       </section>
 
       {/* 6. Technology Stack / Built With */}
-      <section className="bg-white py-20 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
               Built With
@@ -249,14 +265,14 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:mt-10 sm:grid-cols-3 lg:grid-cols-4">
             {TECH_STACK.map((tech, idx) => (
               <Reveal key={tech.name} delay={idx * 0.025}>
-                <div className="flex items-center justify-between rounded-2xl border border-black/8 bg-[#f7f7f8] px-4 py-3.5 transition-colors hover:border-[#F92C53]/45 hover:bg-white">
-                  <span className="text-sm font-semibold text-[#111827]">
+                <div className="flex min-w-0 items-center justify-between gap-2 rounded-2xl border border-black/8 bg-[#f7f7f8] px-4 py-3.5 transition-colors hover:border-[#F92C53]/45 hover:bg-white">
+                  <span className="truncate text-sm font-semibold text-[#111827]">
                     {tech.name}
                   </span>
-                  <span className="font-mono text-[11px] text-[#3A352D]/55">
+                  <span className="shrink-0 font-mono text-[11px] text-[#3A352D]/55">
                     {tech.category}
                   </span>
                 </div>
@@ -267,34 +283,22 @@ export default function HomePage() {
       </section>
 
       {/* Full-bleed Loro-style Crimson Editorial Banner 1 */}
-      <section className="relative aspect-[16/10] w-full overflow-hidden bg-[#2E0308] sm:aspect-auto sm:h-[62vh] md:h-[82vh]">
-        <img
-          src="/images/banners/showcase-banner-1.jpg"
-          alt="Devrious engineering precision visual"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-10 md:px-12 md:pb-16">
-          <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-[#FF4D6A] md:text-xs">
-            01 // Full Ownership
-          </p>
-          <h2 className="mt-2 max-w-2xl font-display text-3xl font-medium leading-[1.02] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
-            Engineered to Own.
-          </h2>
-        </div>
-        <div className="absolute bottom-6 right-6 z-10 hidden max-w-[14rem] text-right font-mono text-[10px] font-medium uppercase leading-[1.7] tracking-wider text-white/80 sm:block md:bottom-10 md:right-12">
-          <span className="block">EVERY DEVRIOUS SYSTEM</span>
-          <span className="block">IS DOCUMENTED,</span>
-          <span className="block">AUDITED, AND HANDED</span>
-          <span className="block">OFF YOURS TO KEEP.</span>
-        </div>
-      </section>
+      <ShowcaseBanner
+        image="/images/banners/showcase-banner-1.jpg"
+        imageAlt="Devrious engineering precision visual"
+        eyebrow="01 // Full Ownership"
+        title="Engineered to Own."
+        manifestoLines={[
+          "EVERY DEVRIOUS SYSTEM",
+          "IS DOCUMENTED,",
+          "AUDITED, AND HANDED",
+          "OFF YOURS TO KEEP.",
+        ]}
+      />
 
       {/* 7. Why Choose Us / The Difference */}
-      <section className="bg-[#f7f7f8] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-[#f7f7f8] py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#00C9A7]">
               The Difference
@@ -304,10 +308,10 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {WHY_CHOOSE_US.map((item, idx) => (
               <Reveal key={item.number} delay={idx * 0.05}>
-                <div className="h-full rounded-3xl border border-black/8 bg-white p-7 transition-shadow duration-300 hover:shadow-md">
+                <div className="h-full rounded-3xl border border-black/8 bg-white p-6 transition-shadow duration-300 hover:shadow-md sm:p-7">
                   <span className="font-mono text-xs font-bold text-[#F92C53]">
                     {item.number}
                   </span>
@@ -325,8 +329,8 @@ export default function HomePage() {
       </section>
 
       {/* 8. Industries & Pre-Builts Preview */}
-      <section className="bg-[#fafafa] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-[#fafafa] py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
@@ -338,7 +342,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/pre-builts"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#111827] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#F92C53]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#111827] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#F92C53] sm:w-auto"
             >
               <span>Browse All 10 Pre Builts</span>
               <ArrowRight className="h-4 w-4" />
@@ -361,7 +365,7 @@ export default function HomePage() {
               <Reveal key={product.slug} delay={idx * 0.05}>
                 <Link
                   href={`/pre-builts/${product.slug}`}
-                  className="group flex h-full flex-col justify-between rounded-3xl border border-black/8 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#F92C53]/45 hover:shadow-lg"
+                  className="group flex h-full flex-col justify-between rounded-3xl border border-black/8 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#F92C53]/45 hover:shadow-lg sm:p-7"
                 >
                   <div>
                     <span className="inline-block rounded-full bg-[#E6FAF6] px-3 py-1 font-mono text-[11px] font-semibold text-[#079669]">
@@ -391,8 +395,8 @@ export default function HomePage() {
       </section>
 
       {/* 9. Creative Portfolio / Visual Showcase (Dark Obsidian Band) */}
-      <section className="bg-[#030303] py-20 text-white md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-[#030303] py-16 text-white sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
             <div>
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
@@ -404,31 +408,33 @@ export default function HomePage() {
             </div>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/8 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/8 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15 sm:w-auto"
             >
               <span>View Portfolio</span>
               <ArrowRight className="h-4 w-4 text-[#00C9A7]" />
             </Link>
           </Reveal>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 lg:grid-cols-2">
             {PORTFOLIO_PROJECTS.map((project, idx) => (
               <Reveal key={project.slug} delay={idx * 0.08}>
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="group block overflow-hidden rounded-3xl border border-white/12 bg-white/[0.04] transition-all duration-300 hover:border-[#F92C53]/55"
+                  className="group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/12 bg-white/[0.04] transition-all duration-300 hover:border-[#F92C53]/55"
                 >
-                  <div className="overflow-hidden border-b border-white/10 bg-black">
-                    <img
-                      src={project.screenshot ?? project.bannerImage}
-                      alt={`${project.name} preview`}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-64 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] sm:h-80"
-                    />
+                  <div className="overflow-hidden border-b border-white/10 bg-[#0d0e12] p-2.5 sm:p-4">
+                    <div className="overflow-hidden rounded-xl border border-white/10 bg-[#14161c]">
+                      <img
+                        src={project.screenshot ?? project.bannerImage}
+                        alt={`${project.name} preview`}
+                        loading="lazy"
+                        decoding="async"
+                        className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
+                      />
+                    </div>
                   </div>
-                  <div className="p-7">
-                    <div className="flex items-center justify-between gap-2">
+                  <div className="p-5 sm:p-7">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-mono text-xs text-[#00C9A7]">
                         {project.category}
                       </span>
@@ -437,7 +443,7 @@ export default function HomePage() {
                         {project.status}
                       </span>
                     </div>
-                    <h3 className="mt-3 font-display text-2xl font-bold text-white">
+                    <h3 className="mt-3 font-display text-xl font-bold text-white sm:text-2xl">
                       {project.name}
                     </h3>
                     <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/65">
@@ -456,35 +462,23 @@ export default function HomePage() {
       </section>
 
       {/* Full-bleed Loro-style Crimson Editorial Banner 2 */}
-      <section className="relative aspect-[16/10] w-full overflow-hidden bg-[#2E0308] sm:aspect-auto sm:h-[62vh] md:h-[82vh]">
-        <img
-          src="/images/banners/showcase-banner-2.jpg"
-          alt="Devrious bespoke software visual"
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />
-        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-10 md:px-12 md:pb-16">
-          <p className="font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-[#FF4D6A] md:text-xs">
-            02 // Bespoke Craft
-          </p>
-          <h2 className="mt-2 max-w-2xl font-display text-3xl font-medium leading-[1.02] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
-            Built Without Shortcuts.
-          </h2>
-        </div>
-        <div className="absolute bottom-6 right-6 z-10 hidden max-w-[14rem] text-right font-mono text-[10px] font-medium uppercase leading-[1.7] tracking-wider text-white/80 sm:block md:bottom-10 md:right-12">
-          <span className="block">YOUR BRAND DESERVES</span>
-          <span className="block">TO STAND OUT. NOT</span>
-          <span className="block">BLEND IN WITH EVERY</span>
-          <span className="block">OTHER TEMPLATE.</span>
-        </div>
-      </section>
+      <ShowcaseBanner
+        image="/images/banners/showcase-banner-2.jpg"
+        imageAlt="Devrious bespoke software visual"
+        eyebrow="02 // Bespoke Craft"
+        title="Built Without Shortcuts."
+        manifestoLines={[
+          "YOUR BRAND DESERVES",
+          "TO STAND OUT. NOT",
+          "BLEND IN WITH EVERY",
+          "OTHER TEMPLATE.",
+        ]}
+      />
 
       {/* 10. Interactive Live Demo Section */}
-      <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Reveal className="mb-10 max-w-2xl">
+      <section className="bg-white py-16 sm:py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mb-8 max-w-2xl sm:mb-10">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#F92C53]">
               Live System Explorer
             </span>
@@ -502,7 +496,7 @@ export default function HomePage() {
 
       {/* 11. Final CTA / Contact Section */}
       <section className="bg-white px-3 pb-16 sm:px-6 md:pb-24">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#030303] p-8 text-white shadow-[0_24px_70px_-20px_rgba(0,0,0,0.3)] sm:p-14 lg:p-16">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#030303] p-6 text-white shadow-[0_24px_70px_-20px_rgba(0,0,0,0.3)] sm:p-14 lg:p-16">
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#F92C53]/25 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-20 left-1/3 h-72 w-72 rounded-full bg-[#00C9A7]/15 blur-3xl" />
 
@@ -512,10 +506,10 @@ export default function HomePage() {
                 <CheckCircle2 className="h-4 w-4" />
                 Ready when you are
               </span>
-              <h2 className="mt-4 font-display text-3xl font-extrabold tracking-[-0.02em] sm:text-5xl">
+              <h2 className="mt-4 font-display text-2xl font-extrabold tracking-[-0.02em] sm:text-5xl">
                 When you are ready, let’s build something meaningful.
               </h2>
-              <p className="mt-4 text-base text-white/80">
+              <p className="mt-4 text-sm text-white/80 sm:text-base">
                 Tell us about your workflow, custom software idea, or Pre-Built
                 system needs. Direct engineering conversation, honest scoping.
               </p>

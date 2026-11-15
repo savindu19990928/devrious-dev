@@ -7,7 +7,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  Cpu,
   Globe,
   Quote,
   ShieldAlert,
@@ -93,166 +92,104 @@ async function PortfolioDetailContent({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(caseStudySchema) }}
       />
-      {/* Cinematic Case Study Hero Banner */}
+      {/* Cinematic Case Study Hero Banner — Project image shown here only, 100% visible across all screens */}
       <PageBanner
+        fullImage
         image={
           project.screenshot ??
           project.bannerImage ??
           "/images/banners/banner-portfolio.jpg"
         }
-        imageAlt={`${project.name} banner`}
-        mobileFocus={project.screenshot ? "object-top" : "object-center"}
+        imageAlt={project.liveUrl ?? `${project.name} — ${project.category}`}
       >
-        <Link
-          href="/portfolio"
-          className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" />
-          <span>All Case Studies</span>
-        </Link>
+        <div className="max-w-3xl lg:max-w-none">
+          <Link
+            href="/portfolio"
+            className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            <span>All Case Studies</span>
+          </Link>
 
-        <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#00C9A7]/35 bg-[#00C9A7]/15 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
-            {project.category}
-          </span>
-          <span className="rounded-full border border-white/15 bg-black/40 px-3.5 py-1 font-mono text-xs font-medium text-white/85 backdrop-blur-md">
-            {project.status}
-          </span>
-        </div>
-
-        <h1 className="mt-5 max-w-4xl font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-white sm:mt-6 sm:text-6xl lg:text-7xl">
-          {project.name}
-        </h1>
-
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-xl">
-          {project.summary}
-        </p>
-
-        {/* Metadata + CTAs */}
-        <div className="mt-8 flex flex-col justify-between gap-6 border-t border-white/15 pt-7 lg:flex-row lg:items-center">
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
-                Client
-              </p>
-              <p className="mt-1 text-sm font-semibold text-white">
-                {project.client}
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
-                Category
-              </p>
-              <p className="mt-1 text-sm font-semibold text-white">
-                {project.category}
-              </p>
-            </div>
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
-                Status
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#99f3e4]">
-                {project.status}
-              </p>
-            </div>
+          <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:mt-6">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#00C9A7]/35 bg-[#00C9A7]/15 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#00C9A7]" />
+              {project.category}
+            </span>
+            <span className="rounded-full border border-white/15 bg-black/40 px-3.5 py-1 font-mono text-xs font-medium text-white/85 backdrop-blur-md">
+              {project.status}
+            </span>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
-              >
-                <Globe className="h-4 w-4" />
-                <span>Visit Live Site</span>
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-            )}
-            {project.internalLink && (
+          <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.08] tracking-tight text-white sm:mt-6 sm:text-4xl lg:text-5xl">
+            {project.name}
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg">
+            {project.summary}
+          </p>
+
+          {/* Metadata + CTAs */}
+          <div className="mt-7 flex flex-col gap-5 border-t border-white/15 pt-6">
+            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-3 sm:gap-4">
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
+                  Client
+                </p>
+                <p className="mt-1 text-sm font-semibold text-white">
+                  {project.client}
+                </p>
+              </div>
+              <div>
+                <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
+                  Category
+                </p>
+                <p className="mt-1 text-sm font-semibold text-white">
+                  {project.category}
+                </p>
+              </div>
+              <div className="col-span-1 min-[420px]:col-span-2 sm:col-span-1">
+                <p className="font-mono text-[11px] uppercase tracking-wider text-white/55">
+                  Status
+                </p>
+                <p className="mt-1 text-sm font-semibold text-[#99f3e4]">
+                  {project.status}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl bg-[#F92C53] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#F92C53]/30 transition-colors hover:bg-[#D91C40]"
+                >
+                  <Globe className="h-4 w-4" />
+                  <span>Visit Live Site</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              )}
+              {project.internalLink && (
+                <Link
+                  href={project.internalLink}
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-black/40 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
+                >
+                  <span>Explore FlexCore Pre-Built</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
               <Link
-                href={project.internalLink}
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-black/40 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
+                href={`/contact?project=${encodeURIComponent(project.name)}`}
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-black/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/15"
               >
-                <span>Explore FlexCore Pre-Built</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Build Similar System</span>
               </Link>
-            )}
-            <Link
-              href={`/contact?project=${encodeURIComponent(project.name)}`}
-              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-black/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/15"
-            >
-              <span>Build Similar System</span>
-            </Link>
+            </div>
           </div>
         </div>
       </PageBanner>
-
-      {/* Full-Width Visual Showcase */}
-      <section className="mx-auto mt-8 w-full max-w-7xl px-4 sm:mt-10 sm:px-6 lg:px-8">
-        {project.screenshot ? (
-          <div className="overflow-hidden rounded-2xl border border-black/10 bg-[#0d0e12] shadow-xl sm:rounded-3xl">
-            <div className="flex items-center justify-between gap-2 border-b border-white/10 bg-[#14161c] px-4 py-3 sm:px-5">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#F92C53] sm:h-3 sm:w-3" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80 sm:h-3 sm:w-3" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#00C9A7] sm:h-3 sm:w-3" />
-              </div>
-              <span className="truncate font-mono text-[11px] text-white/55 sm:text-xs">
-                {project.liveUrl ?? project.name}
-              </span>
-              <span className="hidden font-mono text-[11px] uppercase tracking-wider text-[#99f3e4] sm:inline">
-                Production Preview
-              </span>
-            </div>
-            <img
-              src={project.screenshot}
-              alt={`${project.name} full preview`}
-              loading="lazy"
-              decoding="async"
-              className="w-full object-cover object-top"
-            />
-          </div>
-        ) : (
-          <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-[#08090c] p-6 text-white shadow-xl sm:p-12">
-            <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#F92C53]/20 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-20 left-1/4 h-64 w-64 rounded-full bg-[#00C9A7]/15 blur-3xl" />
-            <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-5">
-                <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-[#00C9A7]">
-                  <Cpu className="h-4 w-4" />
-                  Private / Embedded System
-                </span>
-                <h2 className="mt-3 font-display text-2xl font-extrabold sm:text-3xl">
-                  Engineered for internal operations
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
-                  Because this platform runs inside {project.client}’s private
-                  environment, public screenshots are withheld — here is the
-                  production architecture we delivered.
-                </p>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-2 lg:col-span-7">
-                {project.stack.map((tech, i) => (
-                  <div
-                    key={tech}
-                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4"
-                  >
-                    <span className="font-mono text-sm font-semibold text-white">
-                      {tech}
-                    </span>
-                    <span className="font-mono text-xs text-[#F92C53]">
-                      0{i + 1}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
 
       {/* Tech Stack Strip */}
       <section className="mx-auto mt-8 w-full max-w-7xl px-4 sm:mt-10 sm:px-6 lg:px-8">
