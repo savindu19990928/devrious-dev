@@ -1009,7 +1009,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     category: "E-commerce template",
     status: "Devrious product",
     liveUrl: "https://flexcore.devrious.lk/",
-    internalLink: "/pre-builds/flexcore-ecommerce",
+    internalLink: "/pre-builts/flexcore-ecommerce",
     screenshot: "/images/screenshot_of_flexcore.png",
     summary:
       "Our ready-to-launch e-commerce template with catalogue, deals, pre-orders, order tracking and warranty — available to purchase and brand as your own store.",
@@ -1091,7 +1091,7 @@ export const WHY_CHOOSE_US = [
     number: "03",
     title: "Honest Scoping, Not Upselling",
     description:
-      "If a ready-to-deploy Pre-Build solves 90% of your workflow faster and for less, we tell you — and tailor the rest.",
+      "If a ready-to-deploy Pre-Built solves 90% of your workflow faster and for less, we tell you — and tailor the rest.",
   },
   {
     number: "04",
@@ -1363,9 +1363,9 @@ export const SERVICE_FAQS = [
 
 export const PREBUILD_FAQS = [
   {
-    question: "Can a Pre-Build system be customised to our workflow?",
+    question: "Can a Pre-Built system be customised to our workflow?",
     answer:
-      "Yes. Every Pre-Build is built on our modular React + Django DRF stack, so we can brand it to your company, adjust approval rules, add custom reports, or integrate local payment gateways, SMS, and hardware.",
+      "Yes. Every Pre-Built is built on our modular React + Django DRF stack, so we can brand it to your company, adjust approval rules, add custom reports, or integrate local payment gateways, SMS, and hardware.",
   },
   {
     question: "How fast can we go live?",

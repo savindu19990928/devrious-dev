@@ -76,11 +76,11 @@ async function PreBuildDetailContent({
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
-            href="/pre-builds"
+            href="/pre-builts"
             className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-xs font-semibold text-white/85 backdrop-blur-md transition-colors hover:border-[#F92C53] hover:text-white"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            <span>All 10 Pre-Builds</span>
+            <span>All 10 Pre-Builts</span>
           </Link>
 
           <span className="inline-flex items-center gap-2 rounded-full border border-[#00C9A7]/35 bg-[#00C9A7]/15 px-3.5 py-1 font-mono text-xs font-semibold text-[#99f3e4]">
@@ -352,7 +352,7 @@ async function PreBuildDetailContent({
         </div>
       </section>
 
-      {/* Pre-Build FAQs */}
+      {/* Pre-Built FAQs */}
       <section className="mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-black/8 bg-white p-6 shadow-sm sm:p-10">
           <div className="flex items-center gap-2">
@@ -362,7 +362,7 @@ async function PreBuildDetailContent({
             </span>
           </div>
           <h2 className="mt-2 font-display text-2xl font-extrabold text-[#111827] sm:text-3xl">
-            Common questions about Pre-Builds
+            Common questions about Pre-Builts
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {PREBUILD_FAQS.map((faq) => (
@@ -382,7 +382,7 @@ async function PreBuildDetailContent({
         </div>
       </section>
 
-      {/* Related Pre-Builds */}
+      {/* Related Pre-Builts */}
       <section className="mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <div>
@@ -390,11 +390,11 @@ async function PreBuildDetailContent({
               More Ready-to-Deploy Systems
             </span>
             <h2 className="mt-2 font-display text-2xl font-extrabold text-[#111827] sm:text-3xl">
-              Explore other Pre-Builds
+              Explore other Pre-Builts
             </h2>
           </div>
           <Link
-            href="/pre-builds"
+            href="/pre-builts"
             className="text-sm font-semibold text-[#F92C53] hover:underline"
           >
             View all 10
@@ -405,7 +405,7 @@ async function PreBuildDetailContent({
           {related.map((other) => (
             <Link
               key={other.slug}
-              href={`/pre-builds/${other.slug}`}
+              href={`/pre-builts/${other.slug}`}
               className="group flex flex-col justify-between rounded-2xl border border-black/8 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#F92C53]/40 hover:shadow-md"
             >
               <div>

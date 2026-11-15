@@ -142,7 +142,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 5-Step Delivery Process & Pre-Build Cross-Link */}
+      {/* 5-Step Delivery Process & Pre-Built Cross-Link */}
       <section className="mx-auto mt-14 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-[#030303] p-6 text-white sm:p-12">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#00C9A7]">
@@ -188,7 +188,7 @@ export default function ServicesPage() {
               {PRE_BUILDS.slice(0, 8).map((pb) => (
                 <Link
                   key={pb.slug}
-                  href={`/pre-builds/${pb.slug}`}
+                  href={`/pre-builts/${pb.slug}`}
                   className="group flex items-center justify-between rounded-xl border border-black/8 bg-[#f7f7f8] px-4 py-3 text-sm font-semibold text-[#111827] transition-colors hover:border-[#F92C53]/40 hover:text-[#F92C53]"
                 >
                   <span>{pb.name}</span>

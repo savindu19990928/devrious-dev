@@ -9,7 +9,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/pre-builds", label: "Pre Builds" },
+  { href: "/pre-builts", label: "Pre Builts" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/cybersecurity-services", label: "Cybersecurity" },
   { href: "/about", label: "About" },

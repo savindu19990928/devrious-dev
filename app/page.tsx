@@ -285,7 +285,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Industries & Pre-Builds Preview */}
+      {/* 8. Industries & Pre-Builts Preview */}
       <section className="bg-[#fafafa] py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
@@ -298,10 +298,10 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              href="/pre-builds"
+              href="/pre-builts"
               className="inline-flex items-center gap-2 rounded-xl bg-[#111827] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#F92C53]"
             >
-              <span>Browse All 10 Pre Builds</span>
+              <span>Browse All 10 Pre Builts</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
@@ -321,7 +321,7 @@ export default function HomePage() {
             {PRE_BUILDS.slice(0, 3).map((product, idx) => (
               <Reveal key={product.slug} delay={idx * 0.05}>
                 <Link
-                  href={`/pre-builds/${product.slug}`}
+                  href={`/pre-builts/${product.slug}`}
                   className="group flex h-full flex-col justify-between rounded-3xl border border-black/8 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#F92C53]/45 hover:shadow-lg"
                 >
                   <div>
@@ -473,7 +473,7 @@ export default function HomePage() {
                 When you are ready, let’s build something meaningful.
               </h2>
               <p className="mt-4 text-base text-white/80">
-                Tell us about your workflow, custom software idea, or Pre-Build
+                Tell us about your workflow, custom software idea, or Pre-Built
                 system needs. Direct engineering conversation, honest scoping.
               </p>
             </div>

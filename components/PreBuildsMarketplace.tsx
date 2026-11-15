@@ -74,7 +74,7 @@ export function PreBuildsMarketplace() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search systems or modules..."
-              aria-label="Search Pre Builds"
+              aria-label="Search Pre Builts"
               className="w-full rounded-xl border border-black/12 bg-[#f7f7f8] py-2 pl-9 pr-4 text-sm text-[#111827] placeholder:text-[#3A352D]/45 focus:border-[#F92C53] focus:bg-white focus:outline-none sm:w-64"
             />
           </div>
@@ -180,7 +180,7 @@ export function PreBuildsMarketplace() {
 
                 <div className="mt-4 grid grid-cols-2 gap-2.5">
                   <Link
-                    href={`/pre-builds/${product.slug}`}
+                    href={`/pre-builts/${product.slug}`}
                     className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-[#111827] px-3.5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#F92C53]"
                   >
                     <span>View Details</span>

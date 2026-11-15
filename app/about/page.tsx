@@ -33,7 +33,7 @@ const TIMELINE = [
       "Delivered corporate and brand platforms for Avenor Apparel and Zevora Custom alongside custom factory production and accommodation management systems.",
   },
   {
-    year: "Pre Builds",
+    year: "Pre Builts",
     title: "10 Ready-to-Deploy Business Systems",
     description:
       "Packaged proven POS, ERP, Hotel, Fleet, Social Media, and FlexCore e-commerce systems so Sri Lankan businesses can launch in weeks instead of months.",
@@ -65,7 +65,7 @@ export default function AboutPage() {
           Devrious is a software company founded in Colombo, Sri Lanka in
           2024. We design, engineer, and secure software that solves real
           operational problems — whether built from scratch or deployed from
-          our proven Pre-Build suite.
+          our proven Pre-Built suite.
         </p>
       </PageBanner>
 

@@ -3,7 +3,7 @@ import { PreBuildsMarketplace } from "@/components/PreBuildsMarketplace";
 import { PageBanner } from "@/components/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Pre Builds",
+  title: "Pre Builts",
   description:
     "Ready-to-deploy POS, ERP, Hotel, Fleet, Social Media, and FlexCore E-Commerce systems built by Devrious in Sri Lanka.",
 };

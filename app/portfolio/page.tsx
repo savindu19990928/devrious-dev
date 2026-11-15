@@ -129,7 +129,7 @@ export default function PortfolioPage() {
                         href={project.internalLink}
                         className="inline-flex items-center gap-1.5 rounded-xl border border-black/15 px-4 py-3 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#f7f7f8]"
                       >
-                        <span>View Pre-Build</span>
+                        <span>View Pre-Built</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                     )}

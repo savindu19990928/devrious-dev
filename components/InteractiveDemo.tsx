@@ -96,7 +96,7 @@ export function InteractiveDemo() {
                 </p>
               </div>
               <Link
-                href={`/pre-builds/${active.slug}`}
+                href={`/pre-builts/${active.slug}`}
                 className="ml-auto inline-flex items-center gap-2 rounded-xl bg-[#F92C53] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#D91C40]"
               >
                 <span>Inspect System</span>
@@ -118,7 +118,7 @@ export function InteractiveDemo() {
                   <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#00C9A7]" />
                   <span className="ml-2 font-mono text-xs text-white/60">
-                    devrious.lk/pre-builds/{active.slug}
+                    devrious.lk/pre-builts/{active.slug}
                   </span>
                 </div>
                 <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-1 font-mono text-[11px] text-[#99f3e4]">

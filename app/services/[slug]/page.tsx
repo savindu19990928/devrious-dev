@@ -327,7 +327,7 @@ async function ServiceDetailContent({
         </div>
       </section>
 
-      {/* Service FAQs + Pre-Build Shortcut */}
+      {/* Service FAQs + Pre-Built Shortcut */}
       <section className="mx-auto mt-10 w-full max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-12">
           <div className="rounded-3xl border border-black/8 bg-white p-6 shadow-sm sm:p-10 lg:col-span-7">
@@ -363,14 +363,14 @@ async function ServiceDetailContent({
                 Need to launch in 1–2 weeks?
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-[#3A352D]/80">
-                Start from one of our 10 ready-to-deploy Pre-Builds and let us
+                Start from one of our 10 ready-to-deploy Pre-Builts and let us
                 tailor it around your exact workflow.
               </p>
               <ul className="mt-5 divide-y divide-black/8 border-y border-black/8">
                 {featuredPreBuilds.map((pb) => (
                   <li key={pb.slug}>
                     <Link
-                      href={`/pre-builds/${pb.slug}`}
+                      href={`/pre-builts/${pb.slug}`}
                       className="group flex min-h-[48px] items-center justify-between py-3 text-sm font-semibold text-[#111827] hover:text-[#F92C53]"
                     >
                       <span>{pb.name}</span>
@@ -383,10 +383,10 @@ async function ServiceDetailContent({
               </ul>
             </div>
             <Link
-              href="/pre-builds"
+              href="/pre-builts"
               className="mt-6 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-black/15 bg-[#f7f7f8] px-4 py-3 text-sm font-semibold text-[#111827] transition-colors hover:border-[#F92C53] hover:text-[#F92C53]"
             >
-              <span>Browse All 10 Pre-Builds</span>
+              <span>Browse All 10 Pre-Builts</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

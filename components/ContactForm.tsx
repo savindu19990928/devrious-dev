@@ -10,7 +10,7 @@ const BUDGET_OPTIONS = [
   "LKR 100,000 – 250,000",
   "LKR 250,000 – 500,000",
   "LKR 500,000+",
-  "Pre-Build System Inquiry",
+  "Pre-Built System Inquiry",
 ];
 
 export function ContactForm() {
@@ -24,10 +24,10 @@ export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [service, setService] = useState(
-    initialService || (initialProduct ? "Pre-Build System" : SERVICES[0].title)
+    initialService || (initialProduct ? "Pre-Built System" : SERVICES[0].title)
   );
   const [budget, setBudget] = useState(
-    initialProduct ? "Pre-Build System Inquiry" : BUDGET_OPTIONS[1]
+    initialProduct ? "Pre-Built System Inquiry" : BUDGET_OPTIONS[1]
   );
   const [description, setDescription] = useState(
     initialProduct
@@ -186,7 +186,7 @@ export function ContactForm() {
             onChange={(e) => setService(e.target.value)}
             className="mt-2 w-full rounded-xl border border-black/15 bg-[#f7f7f8] px-4 py-3 text-sm text-[#111827] focus:border-[#F92C53] focus:bg-white focus:outline-none"
           >
-            <option value="Pre-Build System">Pre-Build System (POS / ERP / Web)</option>
+            <option value="Pre-Built System">Pre-Built System (POS / ERP / Web)</option>
             {SERVICES.map((s) => (
               <option key={s.slug} value={s.title}>
                 {s.title}

@@ -153,7 +153,7 @@ async function PortfolioDetailContent({
                 href={project.internalLink}
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-black/40 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
               >
-                <span>Explore FlexCore Pre-Build</span>
+                <span>Explore FlexCore Pre-Built</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             )}
