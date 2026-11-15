@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowUpRight, CheckCircle2, Mail, Send } from "lucide-react";
 import { COMPANY_INFO, SERVICES } from "@/data/devrious";
@@ -35,6 +35,34 @@ export function ContactForm() {
       : ""
   );
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const onAgentPrefill = (e: Event) => {
+      const detail = (
+        e as CustomEvent<{
+          fullName?: string;
+          email?: string;
+          phone?: string;
+          company?: string;
+          service?: string;
+          budget?: string;
+          description?: string;
+        }>
+      ).detail;
+      if (!detail) return;
+      if (detail.fullName) setFullName(detail.fullName);
+      if (detail.email) setEmail(detail.email);
+      if (detail.phone) setPhone(detail.phone);
+      if (detail.company) setCompany(detail.company);
+      if (detail.service) setService(detail.service);
+      if (detail.budget) setBudget(detail.budget);
+      if (detail.description) setDescription(detail.description);
+    };
+
+    window.addEventListener("devrious:prefill-contact", onAgentPrefill);
+    return () =>
+      window.removeEventListener("devrious:prefill-contact", onAgentPrefill);
+  }, []);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();

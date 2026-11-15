@@ -1,0 +1,82 @@
+{
+  "ardVersion": "1.0",
+  "site": {
+    "name": "Devrious",
+    "url": "https://devrious.lk",
+    "description": "Devrious is a software engineering studio in Colombo, Sri Lanka building custom web applications, business operations software, REST APIs, AI assistants, cybersecurity audits, and 10 ready-to-deploy POS & ERP systems.",
+    "language": "en-LK",
+    "contact": {
+      "email": "info@devrious.lk",
+      "phone": "+94 70 661 1936",
+      "whatsapp": "https://wa.me/94706611936",
+      "contactPage": "https://devrious.lk/contact"
+    }
+  },
+  "resources": [
+    {
+      "id": "llms-summary",
+      "type": "text/markdown",
+      "url": "https://devrious.lk/llms.txt",
+      "description": "Concise LLM-friendly index of Devrious services, pre-built systems, pricing, portfolio, and policies."
+    },
+    {
+      "id": "llms-full",
+      "type": "text/markdown",
+      "url": "https://devrious.lk/llms-full.txt",
+      "description": "Complete single-file Markdown knowledge base of Devrious offerings, modules, workflows, case studies, and FAQs."
+    },
+    {
+      "id": "ai-catalog",
+      "type": "application/json",
+      "url": "https://devrious.lk/.well-known/ai-catalog.json",
+      "description": "Machine-readable JSON catalog of all services, pre-built software products, and cybersecurity packages with LKR/USD pricing."
+    },
+    {
+      "id": "sitemap",
+      "type": "application/xml",
+      "url": "https://devrious.lk/sitemap.xml",
+      "description": "XML Sitemap with all 29 canonical routes and image metadata."
+    }
+  ],
+  "agentActions": [
+    {
+      "name": "search_prebuilt_systems",
+      "method": "GET",
+      "urlTemplate": "https://devrious.lk/pre-builts?q={query}&category={category}",
+      "description": "Filter and search Devrious's 10 ready-to-deploy POS, ERP, Hotel, Fleet, Social Media, and E-Commerce systems.",
+      "parameters": {
+        "query": "Keyword such as 'gym', 'pharmacy', 'erp', 'hotel', 'pos', or 'ecommerce'",
+        "category": "Optional category: 'Point of Sale', 'Enterprise & Operations', 'Hospitality & Fleet', or 'Digital & Commerce'"
+      }
+    },
+    {
+      "name": "request_prebuilt_demo_or_quote",
+      "method": "GET",
+      "urlTemplate": "https://devrious.lk/contact?product={productName}&intent={intent}",
+      "description": "Open the Devrious inquiry form pre-configured for a specific Pre-Built system demo or deployment quote.",
+      "parameters": {
+        "productName": "Exact name of the Pre-Built system (e.g. 'Gym POS & Membership System')",
+        "intent": "'demo' or 'quote'"
+      }
+    },
+    {
+      "name": "request_service_proposal",
+      "method": "GET",
+      "urlTemplate": "https://devrious.lk/contact?service={serviceName}",
+      "description": "Open the Devrious inquiry form pre-configured for a custom engineering or cybersecurity service.",
+      "parameters": {
+        "serviceName": "Service title (e.g. 'Custom Web Development', 'Custom Software Development', 'API Development', 'AI Assistants & Tools', 'AI Systems & AI Development', 'Web Application Pen Test')"
+      }
+    }
+  ],
+  "webmcp": {
+    "supported": true,
+    "tools": [
+      "get_company_overview",
+      "search_prebuilt_systems",
+      "list_services_and_pricing",
+      "get_portfolio_case_studies",
+      "prepare_project_inquiry"
+    ]
+  }
+}

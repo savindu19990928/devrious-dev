@@ -10,14 +10,29 @@ import {
   TECH_STACK,
   TRUSTED_CLIENTS,
 } from "@/data/devrious";
+import {
+  buildAboutPageSchema,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/data/seo";
 import { Reveal } from "@/components/Reveal";
 import { PageBanner } from "@/components/PageBanner";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About Us — Software Engineering Studio in Colombo, Sri Lanka",
   description:
-    "Devrious is a software company founded in Colombo, Sri Lanka in 2024 by Savindu Shiranjaya and Rangana Munasinghe.",
-};
+    "Devrious is an independent software engineering studio founded in Colombo, Sri Lanka in 2024 by Savindu Shiranjaya and Rangana Munasinghe. Learn our story, vision, mission, and engineering philosophy.",
+  path: "/about",
+  image: "/images/banners/banner-about.jpg",
+  imageAlt: "Devrious software engineering studio in Colombo, Sri Lanka",
+  keywords: [
+    "about Devrious",
+    "Savindu Shiranjaya",
+    "Rangana Munasinghe",
+    "Colombo software studio",
+    "software engineering company Maharagama Colombo",
+  ],
+});
 
 const TIMELINE = [
   {
@@ -47,8 +62,14 @@ const TIMELINE = [
 ];
 
 export default function AboutPage() {
+  const aboutSchema = buildAboutPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(aboutSchema) }}
+      />
       {/* Loro-style Architectural Crimson Header */}
       <PageBanner
         image="/images/banners/banner-about.jpg"
@@ -205,6 +226,8 @@ export default function AboutPage() {
                 <img
                   src={founder.photo}
                   alt={founder.name}
+                  loading="lazy"
+                  decoding="async"
                   className="h-28 w-28 shrink-0 rounded-2xl object-cover"
                 />
                 <div>

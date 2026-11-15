@@ -6,6 +6,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { POLICY_DOCS } from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildPolicyPageSchema,
+  serializeJsonLd,
+} from "@/data/seo";
 import { PageBanner } from "@/components/PageBanner";
 
 export function generateStaticParams() {
@@ -20,10 +25,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const doc = POLICY_DOCS.find((p) => p.slug === slug);
   if (!doc) return { title: "Policy Not Found" };
-  return {
-    title: doc.title,
-    description: `Devrious ${doc.title}`,
-  };
+  return buildPageMetadata({
+    title: `${doc.title} — Legal & Compliance`,
+    description: `Official Devrious ${doc.title} governing custom software engineering, web development, Pre-Built systems, and website services in Sri Lanka.`,
+    path: `/policies/${doc.slug}`,
+    image: "/images/banners/banner-policies.jpg",
+    imageAlt: `${doc.title} — Devrious Legal & Compliance`,
+    keywords: [`Devrious ${doc.title}`, doc.title],
+  });
 }
 
 function renderPolicyMarkdown(markdown: string) {
@@ -98,9 +107,14 @@ async function PolicyContent({
   const filePath = path.join(process.cwd(), "policies", doc.file);
   const raw = fs.readFileSync(filePath, "utf8");
   const blocks = renderPolicyMarkdown(raw);
+  const policySchema = buildPolicyPageSchema(doc.slug, doc.title);
 
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(policySchema) }}
+      />
       <PageBanner
         image="/images/banners/banner-policies.jpg"
         imageAlt={`${doc.title} — Devrious legal and governance documentation`}
@@ -142,12 +156,12 @@ async function PolicyContent({
           {blocks.map((block, i) => {
             if (block.type === "h1") {
               return (
-                <h1
+                <h2
                   key={i}
-                  className="font-display text-3xl font-extrabold tracking-tight text-[#111827] sm:text-4xl"
+                  className="font-display text-2xl font-extrabold tracking-tight text-[#111827] sm:text-3xl"
                 >
                   {formatInline(block.content)}
-                </h1>
+                </h2>
               );
             }
             if (block.type === "h2") {

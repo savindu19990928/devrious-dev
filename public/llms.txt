@@ -1,0 +1,72 @@
+# Devrious
+
+> Devrious is an independent software engineering studio founded in 2024 in Colombo, Sri Lanka by Savindu Shiranjaya (Co-Founder & Technical Lead) and Rangana Munasinghe (Co-Founder & Operations Lead). We design, build, test, and secure custom websites, business operations software, REST APIs, AI assistants, and end-to-end AI systems — and offer 10 ready-to-deploy Pre-Built POS, ERP, hospitality, fleet, social media, and e-commerce systems that launch in 1–4 weeks.
+
+- **Website:** https://devrious.lk
+- **Phone / WhatsApp:** +94 70 661 1936 (https://wa.me/94706611936)
+- **Email:** info@devrious.lk
+- **Office Address:** 161/6, Old Kottawa Road, Navinna, Maharagama, Colombo, Sri Lanka
+- **Working Hours:** Monday to Friday, 9:00 AM - 6:00 PM (GMT+5:30)
+- **Core Stack:** React, Next.js, TypeScript, Tailwind CSS, Python 3.12, Django 5 & DRF, PostgreSQL, MySQL, Redis, Celery, Docker, Cloudflare WAF, GCP / AWS / OCI, PyTest & Selenium
+
+## Core Pages
+
+- [Home](https://devrious.lk/): Overview of Devrious capabilities, featured pre-built systems, portfolio highlights, technology stack, and interactive system explorer.
+- [Services](https://devrious.lk/services): All 5 core software engineering services, 5-step delivery process, and custom development options.
+- [Pre Builts Marketplace](https://devrious.lk/pre-builts): Interactive catalog of 10 ready-to-deploy POS, ERP, hospitality, fleet, and e-commerce software systems with LKR/USD pricing.
+- [Portfolio & Case Studies](https://devrious.lk/portfolio): 7 real-world client projects and in-house products with challenges, solutions, and client testimonials.
+- [Cybersecurity Services](https://devrious.lk/cybersecurity-services): OWASP-aligned penetration testing, API security assessments, secure code review, and full cloud security audits.
+- [About Devrious](https://devrious.lk/about): Company story, vision, mission, 6 keys to success, co-founders, and engineering timeline.
+- [Contact & Project Inquiry](https://devrious.lk/contact): Direct project scoping, Pre-Built demo requests, email, and WhatsApp inquiry builder.
+
+## Engineering Services (Starting Prices in LKR)
+
+- [01. Custom Web Development](https://devrious.lk/services/custom-web-development): Starting from LKR 85,000 (~$288 USD) — Corporate websites, portals, and web applications built on React, Next.js, and Django DRF with Search Console, SEMrush SEO, and Cloudflare protection.
+- [02. Custom Software Development](https://devrious.lk/services/custom-software-development): Starting from LKR 75,000 (~$254 USD) — Tailored internal tools, operational platforms, and management systems with role-based dashboards, PyTest/Selenium QA, and staff training.
+- [03. API Development](https://devrious.lk/services/api-development): Starting from LKR 55,000 (~$186 USD) — Secure, documented Django DRF REST APIs with JWT/OAuth2, OpenAPI/Swagger docs, payment gateways (PayHere, Stripe), Celery/Redis queues, and load testing.
+- [04. AI Assistants & Tools](https://devrious.lk/services/ai-assistants-and-tools): Starting from LKR 125,000 (~$424 USD) — RAG-powered knowledge-base assistants, customer support chat widgets, WhatsApp automation, and document summarization tools.
+- [05. AI Systems & AI Development](https://devrious.lk/services/ai-systems-and-ai-development): Starting from LKR 175,000 (~$593 USD) — End-to-end predictive analytics, demand forecasting, automated document/invoice extraction, and multi-step workflow orchestration.
+
+## Ready-to-Deploy Pre-Built Systems (One-Time License & Setup in LKR)
+
+- [Gym POS & Membership System](https://devrious.lk/pre-builts/gym-pos): LKR 120,000 (~$407 USD) — Point of Sale | Memberships, QR/card check-ins, supplement counter sales, trainer commissions, and SMS/email renewal alerts (1–2 weeks deployment).
+- [Pharmacy POS System](https://devrious.lk/pre-builts/pharmacy-pos): LKR 85,000 (~$288 USD) — Point of Sale | Batch & FEFO expiry control, generic/brand barcode billing, prescription logs, GRNs, and low-stock reorder lists (1–2 weeks deployment).
+- [Tuition Institute Management & POS](https://devrious.lk/pre-builts/tuition-institute-pos): LKR 95,000 (~$322 USD) — Point of Sale | Student registration, printable QR ID cards, class/hall timetables, monthly fee collection, teacher share calculation, and parent SMS alerts (1–2 weeks deployment).
+- [Grocery Shop POS](https://devrious.lk/pre-builts/grocery-pos): LKR 85,000 (~$288 USD) — Point of Sale | Barcode & loose-item weight billing, customer credit book, supplier balances, and daily cash-up reconciliation (1 week deployment).
+- [Mid-Level Supermarket POS](https://devrious.lk/pre-builts/supermarket-pos): LKR 125,000 (~$424 USD) — Point of Sale | Multi-counter billing with offline fallback, cashier shift floats, promotions, phone-linked loyalty points, and branch margin reporting (2–3 weeks deployment).
+- [ERP System](https://devrious.lk/pre-builts/erp-system): LKR 250,000 (~$847 USD) — Enterprise & Operations | Double-entry finance & accounting, multi-location warehouse inventory, procurement approvals, sales/CRM, HR/EPF/ETF payroll, and BOM production costing (3–4 weeks deployment, 6 months free support).
+- [Hotel Management System](https://devrious.lk/pre-builts/hotel-management): LKR 180,000 (~$610 USD) — Hospitality & Fleet | Front desk booking calendar, seasonal rates, housekeeping status, restaurant room-posting POS, multi-currency folios, and zero-commission direct booking engine (2–3 weeks deployment).
+- [Fleet Management System](https://devrious.lk/pre-builts/fleet-management): LKR 120,000 (~$407 USD) — Hospitality & Fleet | Vehicle registry with licence/insurance expiry alerts, trip dispatch, driver logs, fuel/expense tracking, maintenance scheduling, and GPS integration (2 weeks deployment).
+- [Social Media Management System](https://devrious.lk/pre-builts/social-media-management): LKR 125,000 (~$424 USD) — Digital & Commerce | Drag-and-drop content calendar, multi-account scheduling, client approval workflows, isolated workspaces, and analytics reports (2 weeks deployment).
+- [FlexCore E-Commerce Template](https://devrious.lk/pre-builts/flexcore-ecommerce): LKR 75,000 (~$254 USD) — Digital & Commerce | Ready-to-brand online store (Django DRF + React + MySQL) with catalogue, deals, pre-orders, order tracking, warranty claims, and up to 200 items imported (Live demo: https://flexcore.devrious.lk/).
+
+## Cybersecurity Packages (Starting Prices in LKR)
+
+- [Secure Code Review](https://devrious.lk/cybersecurity-services): Starting from LKR 45,000 (~$153 USD) — Up to 5,000 LOC, OWASP Top 10 checks, secrets & dependency scan, findings report, and developer walkthrough.
+- [API Security Assessment](https://devrious.lk/cybersecurity-services): Starting from LKR 75,000 (~$254 USD) — Up to 25 endpoints, IDOR/BOLA auth testing, rate-limit checks, OWASP API Top 10 coverage, and 1 retest.
+- [Web Application Pen Test](https://devrious.lk/cybersecurity-services): Starting from LKR 95,000 (~$322 USD) — Most requested; up to 15 pages/flows, auth/session testing, SQLi/XSS/CSRF, business-logic abuse, risk-rated report, and 1 free retest.
+- [Full Security Audit](https://devrious.lk/cybersecurity-services): Starting from LKR 195,000 (~$661 USD) — Complete web app + API pen test, critical module code review, GCP/OCI/AWS & Cloudflare WAF configuration review, executive summary, and 2 retest rounds.
+
+## Portfolio Case Studies
+
+- [Avenor Apparel](https://devrious.lk/portfolio/avenor-apparel): Corporate website for Avenor Apparel (Pvt) Ltd (https://avenorapparel.lk/).
+- [Zevora Custom](https://devrious.lk/portfolio/zevora-custom): Brand website & custom apparel quote system (https://zevoracustom.lk/).
+- [Clothing Production Management System](https://devrious.lk/portfolio/clothing-production-system): Internal factory floor production platform for Avenor Apparel (Pvt) Ltd.
+- [Accommodation Management System](https://devrious.lk/portfolio/sunrise-accommodation): Property and reservation management system for Sunrise Apartments.
+- [Bus Ticketing Machine Software](https://devrious.lk/portfolio/smart-metro-ticketing): Offline-first handheld ticketing & back-office reconciliation for Smart Metro Tech.
+- [Smart Park n Fly](https://devrious.lk/portfolio/smart-park-n-fly): UK airport parking reservation platform for Smart Park n Fly (UK).
+- [FlexCore](https://devrious.lk/portfolio/flexcore): In-house e-commerce storefront platform (https://flexcore.devrious.lk/).
+
+## Legal & Policies
+
+- [Privacy Policy](https://devrious.lk/policies/privacy-policy)
+- [Terms & Conditions](https://devrious.lk/policies/terms-and-conditions)
+- [Refund & Cancellation Policy](https://devrious.lk/policies/refund-and-cancellation-policy)
+- [Cookie Policy](https://devrious.lk/policies/cookie-policy)
+
+## Machine-Readable Agent Discovery
+
+- [Full LLM Knowledge Base](https://devrious.lk/llms-full.txt)
+- [AI Service & Product Catalog (JSON)](https://devrious.lk/.well-known/ai-catalog.json)
+- [Agent Resource Discovery (ARD JSON)](https://devrious.lk/.well-known/ard.json)
+- [XML Sitemap](https://devrious.lk/sitemap.xml)

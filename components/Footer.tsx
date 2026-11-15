@@ -34,7 +34,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/45">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/60">
               Quick Links
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/45">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/60">
               Services
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -80,7 +80,7 @@ export function Footer() {
 
           {/* Studio & Contact */}
           <div className="lg:col-span-3">
-            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/45">
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-white/60">
               Studio &amp; Contact
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-white/70">
@@ -129,11 +129,23 @@ export function Footer() {
               <Link
                 key={policy.slug}
                 href={`/policies/${policy.slug}`}
-                className="text-white/60 transition-colors hover:text-[#F92C53]"
+                className="text-white/65 transition-colors hover:text-[#F92C53]"
               >
                 {policy.title}
               </Link>
             ))}
+            <a
+              href="/sitemap.xml"
+              className="text-white/65 transition-colors hover:text-[#00C9A7]"
+            >
+              Sitemap
+            </a>
+            <a
+              href="/llms.txt"
+              className="text-white/65 transition-colors hover:text-[#00C9A7]"
+            >
+              LLMs.txt
+            </a>
           </div>
           <p>{COMPANY_INFO.hours}</p>
         </div>

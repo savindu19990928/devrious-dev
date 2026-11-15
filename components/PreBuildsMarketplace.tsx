@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Search, Sparkles } from "lucide-react";
@@ -20,6 +20,30 @@ export function PreBuildsMarketplace() {
   const [currency, setCurrency] = useState<"LKR" | "USD">("LKR");
   const [category, setCategory] = useState<"All" | PreBuildProduct["category"]>("All");
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get("q");
+    const catParam = params.get("category");
+    if (qParam) setQuery(qParam);
+    if (catParam && CATEGORIES.includes(catParam as "All" | PreBuildProduct["category"])) {
+      setCategory(catParam as "All" | PreBuildProduct["category"]);
+    }
+
+    const onAgentFilter = (e: Event) => {
+      const detail = (e as CustomEvent<{ query?: string; category?: string }>).detail;
+      if (typeof detail?.query === "string") setQuery(detail.query);
+      if (
+        typeof detail?.category === "string" &&
+        CATEGORIES.includes(detail.category as "All" | PreBuildProduct["category"])
+      ) {
+        setCategory(detail.category as "All" | PreBuildProduct["category"]);
+      }
+    };
+
+    window.addEventListener("devrious:filter-prebuilts", onAgentFilter);
+    return () => window.removeEventListener("devrious:filter-prebuilts", onAgentFilter);
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -144,6 +168,8 @@ export function PreBuildsMarketplace() {
                   <img
                     src={product.bannerImage}
                     alt={`${product.name} preview`}
+                    loading="lazy"
+                    decoding="async"
                     className="h-40 w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

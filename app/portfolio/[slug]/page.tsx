@@ -13,6 +13,11 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { PORTFOLIO_PROJECTS, TESTIMONIALS } from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildPortfolioDetailSchema,
+  serializeJsonLd,
+} from "@/data/seo";
 import { PageBanner } from "@/components/PageBanner";
 
 export function generateStaticParams() {
@@ -27,10 +32,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = PORTFOLIO_PROJECTS.find((p) => p.slug === slug);
   if (!project) return { title: "Project Not Found" };
-  return {
-    title: project.name,
+  return buildPageMetadata({
+    title: `${project.name} — ${project.category} Case Study`,
     description: project.summary,
-  };
+    path: `/portfolio/${project.slug}`,
+    image:
+      project.screenshot ??
+      project.bannerImage ??
+      "/images/banners/banner-portfolio.jpg",
+    imageAlt: `${project.name} (${project.client}) case study by Devrious`,
+    type: "article",
+    keywords: [
+      project.name,
+      project.client,
+      project.category,
+      ...project.stack,
+    ],
+  });
 }
 
 export default function PortfolioDetailPage({
@@ -67,9 +85,14 @@ async function PortfolioDetailContent({
     0,
     3
   );
+  const caseStudySchema = buildPortfolioDetailSchema(project);
 
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-20 sm:pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(caseStudySchema) }}
+      />
       {/* Cinematic Case Study Hero Banner */}
       <PageBanner
         image={
@@ -187,6 +210,8 @@ async function PortfolioDetailContent({
             <img
               src={project.screenshot}
               alt={`${project.name} full preview`}
+              loading="lazy"
+              decoding="async"
               className="w-full object-cover object-top"
             />
           </div>

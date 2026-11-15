@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Quote } from "lucide-react";
 import {
@@ -11,13 +12,47 @@ import {
   TESTIMONIALS,
   WHY_CHOOSE_US,
 } from "@/data/devrious";
+import {
+  buildHomePageSchema,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/data/seo";
 import { HomeHero } from "@/components/HomeHero";
 import { Reveal } from "@/components/Reveal";
 import { InteractiveDemo } from "@/components/InteractiveDemo";
 
+export const metadata: Metadata = {
+  ...buildPageMetadata({
+    title: "Custom Software, Web & AI Development in Sri Lanka",
+    description:
+      "Devrious is a software engineering studio in Colombo, Sri Lanka. We design, build, and secure custom websites, business operations software, REST APIs, AI tools, and 10 ready-to-deploy POS & ERP systems.",
+    path: "/",
+    image: "/images/banners/hero-banner.jpg",
+    imageAlt:
+      "Devrious — Custom Software, Web & AI Engineering Studio in Colombo, Sri Lanka",
+    keywords: [
+      "software company in Sri Lanka",
+      "custom software development Colombo",
+      "web development Sri Lanka",
+      "POS software Sri Lanka",
+      "ERP software Sri Lanka",
+      "AI development company Sri Lanka",
+    ],
+  }),
+  title: {
+    absolute: "Devrious | Custom Software, Web & AI Development in Sri Lanka",
+  },
+};
+
 export default function HomePage() {
+  const homeSchema = buildHomePageSchema();
+
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeSchema) }}
+      />
       {/* 1. Hero / Introduction */}
       <HomeHero />
 
@@ -96,6 +131,8 @@ export default function HomePage() {
                     <img
                       src={service.homeImage}
                       alt={service.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
@@ -234,6 +271,8 @@ export default function HomePage() {
         <img
           src="/images/banners/showcase-banner-1.jpg"
           alt="Devrious engineering precision visual"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />
@@ -383,6 +422,8 @@ export default function HomePage() {
                     <img
                       src={project.screenshot ?? project.bannerImage}
                       alt={`${project.name} preview`}
+                      loading="lazy"
+                      decoding="async"
                       className="h-64 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] sm:h-80"
                     />
                   </div>
@@ -419,6 +460,8 @@ export default function HomePage() {
         <img
           src="/images/banners/showcase-banner-2.jpg"
           alt="Devrious bespoke software visual"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />

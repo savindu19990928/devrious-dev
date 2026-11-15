@@ -2,18 +2,40 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PORTFOLIO_PROJECTS, TESTIMONIALS } from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildPortfolioPageSchema,
+  serializeJsonLd,
+} from "@/data/seo";
 import { Reveal } from "@/components/Reveal";
 import { PageBanner } from "@/components/PageBanner";
 
-export const metadata: Metadata = {
-  title: "Portfolio",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Portfolio & Engineering Case Studies",
   description:
-    "Selected client work by Devrious — Avenor Apparel corporate website and Zevora Custom brand website & quote system.",
-};
+    "Selected client work and production software systems built by Devrious — Avenor Apparel, Zevora Custom, Clothing Production Management, Sunrise Apartments, Smart Metro Tech, Smart Park n Fly (UK), and FlexCore.",
+  path: "/portfolio",
+  image: "/images/banners/banner-portfolio.jpg",
+  imageAlt: "Devrious portfolio showcase of production websites and software systems",
+  keywords: [
+    "Devrious portfolio",
+    "software case studies Sri Lanka",
+    "web development portfolio Sri Lanka",
+    "Avenor Apparel website",
+    "Zevora Custom website",
+    "garment production management software Sri Lanka",
+  ],
+});
 
 export default function PortfolioPage() {
+  const portfolioSchema = buildPortfolioPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(portfolioSchema) }}
+      />
       <PageBanner
         image="/images/banners/banner-portfolio.jpg"
         imageAlt="Devrious portfolio showcase of production websites and software systems"
@@ -59,6 +81,8 @@ export default function PortfolioPage() {
                   <img
                     src={project.screenshot ?? project.bannerImage}
                     alt={`${project.name} preview`}
+                    loading="lazy"
+                    decoding="async"
                     className={`h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-96 lg:h-full ${
                       project.screenshot ? "object-top" : "object-center"
                     }`}

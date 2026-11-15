@@ -2,18 +2,39 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { COMPANY_INFO } from "@/data/devrious";
+import {
+  buildContactPageSchema,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/data/seo";
 import { ContactForm } from "@/components/ContactForm";
 import { PageBanner } from "@/components/PageBanner";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact Us — Start a Project or Request a Live Demo",
   description:
-    "Contact Devrious in Colombo, Sri Lanka — +94 70 661 1936, info@devrious.lk.",
-};
+    "Contact Devrious in Colombo, Sri Lanka (+94 70 661 1936, info@devrious.lk, 161/6 Old Kottawa Road, Navinna, Maharagama) for custom software, web development, cybersecurity, or Pre-Built POS & ERP demos.",
+  path: "/contact",
+  image: "/images/banners/banner-contact.jpg",
+  imageAlt: "Contact Devrious software engineering team in Colombo, Sri Lanka",
+  keywords: [
+    "contact Devrious",
+    "Devrious phone number",
+    "Devrious Colombo address",
+    "request POS demo Sri Lanka",
+    "software development quote Sri Lanka",
+  ],
+});
 
 export default function ContactPage() {
+  const contactSchema = buildContactPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(contactSchema) }}
+      />
       <PageBanner
         image="/images/banners/banner-contact.jpg"
         imageAlt="Contact Devrious software engineering team in Colombo, Sri Lanka"

@@ -1,28 +1,57 @@
-# 1. Install dependencies
+# ------------------------------------------------------------
+# 1. Dependencies Stage
+# ------------------------------------------------------------
 FROM node:22-alpine AS deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
+
 COPY package.json package-lock.json ./
 RUN npm ci
 
-# 2. Build the app
+# ------------------------------------------------------------
+# 2. Builder Stage
+# ------------------------------------------------------------
 FROM node:22-alpine AS builder
 WORKDIR /app
+
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
 RUN npm run build
 
-# 3. Production image
+# ------------------------------------------------------------
+# 3. Production Runner Stage (Google Cloud Run Ready)
+# ------------------------------------------------------------
 FROM node:22-alpine AS runner
 WORKDIR /app
+
 ENV NODE_ENV=production
+ENV PORT=8080
+ENV HOSTNAME="0.0.0.0"
+ENV NEXT_TELEMETRY_DISABLED=1
 
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
-COPY serve.json ./
+# Cloud Run security best practice: run as non-root user
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
 
-RUN npm install -g serve
+# Copy static public assets & markdown policies
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/policies ./policies
+
+# Set up prerender cache directory permissions
+RUN mkdir -p .next/cache && chown -R nextjs:nodejs /app
+
+# Copy Next.js standalone server, static bundles, and launcher
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/serve.js ./serve.js
+
+USER nextjs
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "serve -s dist -l 8080 -c serve.json"]
+# Starts the production server on 0.0.0.0:${PORT} (defaults to 8080)
+CMD ["node", "serve.js"]

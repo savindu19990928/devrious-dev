@@ -1,19 +1,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
-import { DELIVERY_PROCESS, PRE_BUILDS, SERVICES } from "@/data/devrious";
+import { ArrowRight, CheckCircle2, HelpCircle, ShieldCheck } from "lucide-react";
+import {
+  DELIVERY_PROCESS,
+  PRE_BUILDS,
+  SERVICE_FAQS,
+  SERVICES,
+} from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildServicesPageSchema,
+  serializeJsonLd,
+} from "@/data/seo";
 import { Reveal } from "@/components/Reveal";
 import { PageBanner } from "@/components/PageBanner";
 
-export const metadata: Metadata = {
-  title: "Services",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Custom Web, Software, API & AI Development Services",
   description:
-    "Custom web development, custom business software, API development, AI assistants, and AI systems engineered in Colombo, Sri Lanka.",
-};
+    "Explore Devrious engineering services in Colombo, Sri Lanka: Custom Web Development (from LKR 85,000), Custom Software (from LKR 75,000), REST APIs (from LKR 55,000), AI Assistants, and End-to-End AI Systems.",
+  path: "/services",
+  image: "/images/banners/banner-services.jpg",
+  imageAlt: "Devrious software engineers reviewing a system architecture diagram",
+  keywords: [
+    "custom web development Sri Lanka",
+    "custom software development Colombo",
+    "REST API development Sri Lanka",
+    "AI chatbot development Sri Lanka",
+    "AI automation Sri Lanka",
+    "Django React developers Sri Lanka",
+  ],
+});
 
 export default function ServicesPage() {
+  const servicesSchema = buildServicesPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(servicesSchema) }}
+      />
       {/* Photo Banner */}
       <PageBanner
         image="/images/banners/banner-services.jpg"
@@ -45,6 +72,8 @@ export default function ServicesPage() {
                     <img
                       src={service.editorialImage}
                       alt={service.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
@@ -216,6 +245,36 @@ export default function ServicesPage() {
               <span>Cybersecurity Services</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section className="mx-auto mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-black/8 bg-white p-6 shadow-sm sm:p-10">
+          <div className="flex items-center gap-2">
+            <HelpCircle className="h-4 w-4 text-[#F92C53]" />
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#F92C53]">
+              Engineering FAQs
+            </span>
+          </div>
+          <h2 className="mt-2 font-display text-2xl font-extrabold text-[#111827] sm:text-3xl">
+            Common questions about custom projects
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {SERVICE_FAQS.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-black/6 bg-[#f7f7f8] p-5"
+              >
+                <h3 className="font-display text-base font-bold text-[#111827] sm:text-lg">
+                  {faq.question}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#3A352D]/80">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

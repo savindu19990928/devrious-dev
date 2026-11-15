@@ -1,0 +1,8 @@
+Contact: mailto:info@devrious.lk
+Contact: https://devrious.lk/cybersecurity-services
+Contact: https://devrious.lk/contact
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, si
+Canonical: https://devrious.lk/.well-known/security.txt
+Policy: https://devrious.lk/policies/privacy-policy
+Hiring: https://devrious.lk/about

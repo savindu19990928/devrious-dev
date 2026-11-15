@@ -2,14 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bug, FileSearch, ShieldCheck } from "lucide-react";
 import { CYBERSECURITY_STEPS, CYBERSECURITY_TESTS } from "@/data/devrious";
+import {
+  buildCybersecurityPageSchema,
+  buildPageMetadata,
+  serializeJsonLd,
+} from "@/data/seo";
 import { CybersecurityPackages } from "@/components/CybersecurityPackages";
 import { Reveal } from "@/components/Reveal";
 
-export const metadata: Metadata = {
-  title: "Cybersecurity Services",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Cybersecurity, Penetration Testing & Secure Code Review in Sri Lanka",
   description:
-    "Penetration testing, API security assessments, secure code reviews, and cloud security audits by Devrious in Colombo, Sri Lanka.",
-};
+    "OWASP-aligned web application penetration testing, REST API security assessments, secure code reviews, and cloud/WAF security audits by Devrious in Colombo, Sri Lanka. Packages from LKR 45,000.",
+  path: "/cybersecurity-services",
+  image: "/images/banners/cybersecurity-banner.jpg",
+  imageAlt: "Devrious cybersecurity and penetration testing services in Sri Lanka",
+  keywords: [
+    "penetration testing Sri Lanka",
+    "cybersecurity company Sri Lanka",
+    "web application penetration testing Colombo",
+    "API security testing Sri Lanka",
+    "secure code review Sri Lanka",
+    "OWASP security audit Sri Lanka",
+  ],
+});
 
 const HIGHLIGHTS = [
   { icon: Bug, text: "Penetration testing for web apps and APIs" },
@@ -18,8 +34,14 @@ const HIGHLIGHTS = [
 ];
 
 export default function CybersecurityServicesPage() {
+  const cyberSchema = buildCybersecurityPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(cyberSchema) }}
+      />
       {/* Hero Banner with Mobile-Visible Framing */}
       <section className="px-3 pt-4 sm:px-6">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#2E0308] text-white shadow-[0_14px_45px_rgba(0,0,0,0.18)]">

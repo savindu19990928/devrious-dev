@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Devrious Software Studio",
+  "name_for_model": "devrious_sri_lanka",
+  "description_for_human": "Custom web, software, API, AI, and cybersecurity services plus 10 ready-to-deploy POS & ERP systems in Colombo, Sri Lanka.",
+  "description_for_model": "Query Devrious (Colombo, Sri Lanka) for custom software development, web development, REST APIs, AI assistants, penetration testing, and 10 ready-to-deploy Pre-Built systems (Gym POS, Pharmacy POS, Tuition POS, Grocery POS, Supermarket POS, ERP System, Hotel Management, Fleet Management, Social Media Management, FlexCore E-Commerce) with transparent LKR and USD pricing.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "json-catalog",
+    "url": "https://devrious.lk/.well-known/ai-catalog.json"
+  },
+  "logo_url": "https://devrious.lk/logo.ico",
+  "contact_email": "info@devrious.lk",
+  "legal_info_url": "https://devrious.lk/policies/terms-and-conditions"
+}

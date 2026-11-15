@@ -18,8 +18,12 @@ import {
   SERVICE_FAQS,
   SERVICES,
 } from "@/data/devrious";
-
-const LKR_PER_USD = 295;
+import {
+  buildPageMetadata,
+  buildServiceDetailSchema,
+  LKR_PER_USD,
+  serializeJsonLd,
+} from "@/data/seo";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -33,10 +37,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return { title: "Service Not Found" };
-  return {
-    title: service.title,
-    description: service.tagline,
-  };
+  return buildPageMetadata({
+    title: `${service.title} in Sri Lanka`,
+    description: `${service.title} in Colombo, Sri Lanka by Devrious (from LKR ${service.priceLkr.toLocaleString()}): ${service.tagline}`,
+    path: `/services/${service.slug}`,
+    image: service.heroImage,
+    imageAlt: `${service.title} — Devrious Software Engineering`,
+    keywords: [
+      service.title,
+      `${service.title} Sri Lanka`,
+      `${service.shortTitle} Colombo`,
+      ...service.technologies,
+    ],
+  });
 }
 
 export default function ServiceDetailPage({
@@ -70,9 +83,14 @@ async function ServiceDetailContent({
   const approxUsd = Math.round(service.priceLkr / LKR_PER_USD);
   const otherServices = SERVICES.filter((s) => s.slug !== slug);
   const featuredPreBuilds = PRE_BUILDS.slice(0, 4);
+  const serviceSchema = buildServiceDetailSchema(service);
 
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-20 sm:pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceSchema) }}
+      />
       {/* Mobile-First Full-Bleed Obsidian + Crimson Editorial Hero */}
       <section className="px-3 pt-3 sm:px-6 sm:pt-4">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#2E0308] text-white shadow-[0_24px_80px_-24px_rgba(46,3,8,0.5)] sm:rounded-3xl">

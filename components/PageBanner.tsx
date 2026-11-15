@@ -31,6 +31,8 @@ export function PageBanner({
           <img
             src={image}
             alt={imageAlt}
+            fetchPriority="high"
+            decoding="async"
             className={`h-full w-full object-cover ${mobileFocus}`}
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#1a0205]/25 to-[#1a0205]" />
@@ -42,6 +44,8 @@ export function PageBanner({
             src={image}
             alt=""
             aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
             className="h-full w-full object-cover object-right"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0103] via-[#1a0205]/85 to-transparent" />

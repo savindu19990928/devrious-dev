@@ -1,16 +1,44 @@
 import type { Metadata } from "next";
+import { HelpCircle } from "lucide-react";
+import { PREBUILD_FAQS } from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildPreBuildsPageSchema,
+  serializeJsonLd,
+} from "@/data/seo";
 import { PreBuildsMarketplace } from "@/components/PreBuildsMarketplace";
 import { PageBanner } from "@/components/PageBanner";
 
-export const metadata: Metadata = {
-  title: "Pre Builts",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Pre Builts — Ready-to-Deploy POS, ERP & Business Software Systems",
   description:
-    "Ready-to-deploy POS, ERP, Hotel, Fleet, Social Media, and FlexCore E-Commerce systems built by Devrious in Sri Lanka.",
-};
+    "Deploy proven POS, ERP, Hotel, Fleet, Social Media, and FlexCore E-Commerce software systems in 1–4 weeks. Built by Devrious in Colombo, Sri Lanka with transparent LKR pricing.",
+  path: "/pre-builts",
+  image: "/images/banners/banner-prebuilds.jpg",
+  imageAlt: "Ready-to-deploy POS, ERP, and business software systems by Devrious",
+  keywords: [
+    "POS system Sri Lanka",
+    "Gym POS Sri Lanka",
+    "Pharmacy POS Sri Lanka",
+    "Supermarket POS Sri Lanka",
+    "Grocery POS Sri Lanka",
+    "Tuition institute management software Sri Lanka",
+    "ERP system Sri Lanka",
+    "Hotel management software Sri Lanka",
+    "Fleet management software Sri Lanka",
+    "E-commerce website template Sri Lanka",
+  ],
+});
 
 export default function PreBuildsPage() {
+  const preBuildsSchema = buildPreBuildsPageSchema();
+
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(preBuildsSchema) }}
+      />
       <PageBanner
         image="/images/banners/banner-prebuilds.jpg"
         imageAlt="Ready-to-deploy POS and business software systems"
@@ -30,6 +58,36 @@ export default function PreBuildsPage() {
 
       <section className="mx-auto mt-10 w-full max-w-7xl px-6 lg:px-8">
         <PreBuildsMarketplace />
+      </section>
+
+      {/* Pre-Built FAQs */}
+      <section className="mx-auto mt-14 w-full max-w-7xl px-6 lg:px-8">
+        <div className="rounded-3xl border border-black/8 bg-white p-6 shadow-sm sm:p-10">
+          <div className="flex items-center gap-2">
+            <HelpCircle className="h-4 w-4 text-[#F92C53]" />
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#F92C53]">
+              Pre-Built Systems FAQs
+            </span>
+          </div>
+          <h2 className="mt-2 font-display text-2xl font-extrabold text-[#111827] sm:text-3xl">
+            Common questions about deploying Pre-Builts
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {PREBUILD_FAQS.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-black/6 bg-[#f7f7f8] p-5"
+              >
+                <h3 className="font-display text-base font-bold text-[#111827] sm:text-lg">
+                  {faq.question}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#3A352D]/80">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   );

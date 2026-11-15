@@ -14,9 +14,13 @@ import {
   PackageCheck,
 } from "lucide-react";
 import { PRE_BUILDS, PREBUILD_FAQS } from "@/data/devrious";
+import {
+  buildPageMetadata,
+  buildPreBuildDetailSchema,
+  LKR_PER_USD,
+  serializeJsonLd,
+} from "@/data/seo";
 import { PageBanner } from "@/components/PageBanner";
-
-const LKR_PER_USD = 295;
 
 export function generateStaticParams() {
   return PRE_BUILDS.map((p) => ({ slug: p.slug }));
@@ -30,10 +34,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = PRE_BUILDS.find((p) => p.slug === slug);
   if (!product) return { title: "Product Not Found" };
-  return {
-    title: product.name,
-    description: product.tagline,
-  };
+  return buildPageMetadata({
+    title: `${product.name} (${product.category} Software in Sri Lanka)`,
+    description: `${product.tagline} ${product.summary} One-time setup & license LKR ${product.priceLkr.toLocaleString()} by Devrious in Sri Lanka.`,
+    path: `/pre-builts/${product.slug}`,
+    image: product.screenshot ?? product.bannerImage,
+    imageAlt: `${product.name} — Ready-to-Deploy ${product.category} System`,
+    keywords: [
+      product.name,
+      `${product.name} Sri Lanka`,
+      `${product.category} software Sri Lanka`,
+      ...product.idealFor,
+    ],
+  });
 }
 
 export default function PreBuildDetailPage({
@@ -65,9 +78,14 @@ async function PreBuildDetailContent({
 
   const approxUsd = Math.round(product.priceLkr / LKR_PER_USD);
   const related = PRE_BUILDS.filter((p) => p.slug !== slug).slice(0, 3);
+  const productSchema = buildPreBuildDetailSchema(product);
 
   return (
     <main className="flex flex-col bg-[#f7f7f8] pb-20 sm:pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(productSchema) }}
+      />
       {/* Flagship Product Hero */}
       <PageBanner
         image={product.bannerImage}

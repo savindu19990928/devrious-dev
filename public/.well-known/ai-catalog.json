@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-11-15T00:00:00Z",
+  "organization": {
+    "name": "Devrious",
+    "tagline": "Software Company · Colombo, Sri Lanka",
+    "slogan": "Technology with purpose. Innovation with direction.",
+    "founded": 2024,
+    "url": "https://devrious.lk",
+    "email": "info@devrious.lk",
+    "phone": "+94 70 661 1936",
+    "whatsapp": "https://wa.me/94706611936",
+    "address": {
+      "street": "161/6, Old Kottawa Road, Navinna, Maharagama",
+      "city": "Colombo",
+      "region": "Western Province",
+      "postalCode": "10280",
+      "country": "LK"
+    },
+    "hours": "Monday to Friday, 9:00 AM - 6:00 PM (GMT+5:30)",
+    "founders": [
+      {
+        "name": "Savindu Shiranjaya",
+        "role": "Co-Founder & Technical Lead"
+      },
+      {
+        "name": "Rangana Munasinghe",
+        "role": "Co-Founder & Operations Lead"
+      }
+    ]
+  },
+  "services": [
+    {
+      "slug": "custom-web-development",
+      "number": "01",
+      "title": "Custom Web Development",
+      "startingPriceLkr": 85000,
+      "approxPriceUsd": 288,
+      "url": "https://devrious.lk/services/custom-web-development",
+      "inquiryUrl": "https://devrious.lk/contact?service=Custom%20Web%20Development",
+      "tagline": "Corporate websites, portals and web applications that load fast and rank well.",
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Django DRF", "Cloudflare"]
+    },
+    {
+      "slug": "custom-software-development",
+      "number": "02",
+      "title": "Custom Software Development",
+      "startingPriceLkr": 75000,
+      "approxPriceUsd": 254,
+      "url": "https://devrious.lk/services/custom-software-development",
+      "inquiryUrl": "https://devrious.lk/contact?service=Custom%20Software%20Development",
+      "tagline": "Business software shaped around how your team actually works.",
+      "technologies": ["Python 3.12", "Django 5", "PostgreSQL", "React", "Docker", "Redis"]
+    },
+    {
+      "slug": "api-development",
+      "number": "03",
+      "title": "API Development",
+      "startingPriceLkr": 55000,
+      "approxPriceUsd": 186,
+      "url": "https://devrious.lk/services/api-development",
+      "inquiryUrl": "https://devrious.lk/contact?service=API%20Development",
+      "tagline": "Secure, documented APIs that connect apps, devices and partners.",
+      "technologies": ["Django DRF", "PostgreSQL", "Celery", "Redis", "OpenAPI", "OWASP"]
+    },
+    {
+      "slug": "ai-assistants-and-tools",
+      "number": "04",
+      "title": "AI Assistants & Tools",
+      "startingPriceLkr": 125000,
+      "approxPriceUsd": 424,
+      "url": "https://devrious.lk/services/ai-assistants-and-tools",
+      "inquiryUrl": "https://devrious.lk/contact?service=AI%20Assistants%20%26%20Tools",
+      "tagline": "Assistants that answer customers, draft content and automate routine work.",
+      "technologies": ["Python", "LLM APIs", "RAG", "React", "FastAPI / DRF", "PostgreSQL"]
+    },
+    {
+      "slug": "ai-systems-and-ai-development",
+      "number": "05",
+      "title": "AI Systems & AI Development",
+      "startingPriceLkr": 175000,
+      "approxPriceUsd": 593,
+      "url": "https://devrious.lk/services/ai-systems-and-ai-development",
+      "inquiryUrl": "https://devrious.lk/contact?service=AI%20Systems%20%26%20AI%20Development",
+      "tagline": "End-to-end AI systems — prediction, recognition and intelligent automation.",
+      "technologies": ["Python", "Celery", "Redis", "PostgreSQL", "Docker", "GCP / AWS"]
+    }
+  ],
+  "preBuiltSystems": [
+    {
+      "slug": "gym-pos",
+      "name": "Gym POS & Membership System",
+      "category": "Point of Sale",
+      "priceLkr": 120000,
+      "approxPriceUsd": 407,
+      "deploymentTime": "1–2 Weeks",
+      "url": "https://devrious.lk/pre-builts/gym-pos",
+      "demoUrl": "https://devrious.lk/contact?product=Gym%20POS%20%26%20Membership%20System&intent=demo",
+      "summary": "Membership plans, QR check-ins, supplement sales and trainer schedules in one system."
+    },
+    {
+      "slug": "pharmacy-pos",
+      "name": "Pharmacy POS System",
+      "category": "Point of Sale",
+      "priceLkr": 85000,
+      "approxPriceUsd": 288,
+      "deploymentTime": "1–2 Weeks",
+      "url": "https://devrious.lk/pre-builts/pharmacy-pos",
+      "demoUrl": "https://devrious.lk/contact?product=Pharmacy%20POS%20System&intent=demo",
+      "summary": "Batch-wise stock, expiry alerts, supplier GRNs and prescription sales for pharmacies."
+    },
+    {
+      "slug": "tuition-institute-pos",
+      "name": "Tuition Institute Management & POS",
+      "category": "Point of Sale",
+      "priceLkr": 95000,
+      "approxPriceUsd": 322,
+      "deploymentTime": "1–2 Weeks",
+      "url": "https://devrious.lk/pre-builts/tuition-institute-pos",
+      "demoUrl": "https://devrious.lk/contact?product=Tuition%20Institute%20Management%20%26%20POS&intent=demo",
+      "summary": "Class fees, QR attendance, student ID cards and teacher payment calculations."
+    },
+    {
+      "slug": "grocery-pos",
+      "name": "Grocery Shop POS",
+      "category": "Point of Sale",
+      "priceLkr": 85000,
+      "approxPriceUsd": 288,
+      "deploymentTime": "1 Week",
+      "url": "https://devrious.lk/pre-builts/grocery-pos",
+      "demoUrl": "https://devrious.lk/contact?product=Grocery%20Shop%20POS&intent=demo",
+      "summary": "Quick barcode and loose-item billing, customer credit book and daily cash-up."
+    },
+    {
+      "slug": "supermarket-pos",
+      "name": "Mid-Level Supermarket POS",
+      "category": "Point of Sale",
+      "priceLkr": 125000,
+      "approxPriceUsd": 424,
+      "deploymentTime": "2–3 Weeks",
+      "url": "https://devrious.lk/pre-builts/supermarket-pos",
+      "demoUrl": "https://devrious.lk/contact?product=Mid-Level%20Supermarket%20POS&intent=demo",
+      "summary": "Multiple counters, cashier shifts, promotions, loyalty points and branch reports."
+    },
+    {
+      "slug": "erp-system",
+      "name": "ERP System",
+      "category": "Enterprise & Operations",
+      "priceLkr": 250000,
+      "approxPriceUsd": 847,
+      "deploymentTime": "3–4 Weeks",
+      "url": "https://devrious.lk/pre-builts/erp-system",
+      "demoUrl": "https://devrious.lk/contact?product=ERP%20System&intent=demo",
+      "summary": "Finance, inventory, procurement, sales, HR and production on one connected platform."
+    },
+    {
+      "slug": "hotel-management",
+      "name": "Hotel Management System",
+      "category": "Hospitality & Fleet",
+      "priceLkr": 180000,
+      "approxPriceUsd": 610,
+      "deploymentTime": "2–3 Weeks",
+      "url": "https://devrious.lk/pre-builts/hotel-management",
+      "demoUrl": "https://devrious.lk/contact?product=Hotel%20Management%20System&intent=demo",
+      "summary": "Reservations, room status, housekeeping, restaurant billing and guest folios."
+    },
+    {
+      "slug": "fleet-management",
+      "name": "Fleet Management System",
+      "category": "Hospitality & Fleet",
+      "priceLkr": 120000,
+      "approxPriceUsd": 407,
+      "deploymentTime": "2 Weeks",
+      "url": "https://devrious.lk/pre-builts/fleet-management",
+      "demoUrl": "https://devrious.lk/contact?product=Fleet%20Management%20System&intent=demo",
+      "summary": "Vehicle registry, trip dispatch, fuel logs, maintenance schedules and cost reports."
+    },
+    {
+      "slug": "social-media-management",
+      "name": "Social Media Management System",
+      "category": "Digital & Commerce",
+      "priceLkr": 125000,
+      "approxPriceUsd": 424,
+      "deploymentTime": "2 Weeks",
+      "url": "https://devrious.lk/pre-builts/social-media-management",
+      "demoUrl": "https://devrious.lk/contact?product=Social%20Media%20Management%20System&intent=demo",
+      "summary": "Content calendar, approvals, multi-account scheduling and performance analytics."
+    },
+    {
+      "slug": "flexcore-ecommerce",
+      "name": "FlexCore E-Commerce Template",
+      "category": "Digital & Commerce",
+      "priceLkr": 75000,
+      "approxPriceUsd": 254,
+      "deploymentTime": "1–2 Weeks",
+      "url": "https://devrious.lk/pre-builts/flexcore-ecommerce",
+      "liveStorefrontUrl": "https://flexcore.devrious.lk/",
+      "demoUrl": "https://devrious.lk/contact?product=FlexCore%20E-Commerce%20Template&intent=demo",
+      "summary": "Ready-to-launch online store with deals, pre-orders, order tracking and warranty."
+    }
+  ],
+  "cybersecurityPackages": [
+    {
+      "id": "secure-code-review",
+      "name": "Secure Code Review",
+      "startingPriceLkr": 45000,
+      "approxPriceUsd": 153,
+      "url": "https://devrious.lk/cybersecurity-services"
+    },
+    {
+      "id": "api-security-assessment",
+      "name": "API Security Assessment",
+      "startingPriceLkr": 75000,
+      "approxPriceUsd": 254,
+      "url": "https://devrious.lk/cybersecurity-services"
+    },
+    {
+      "id": "web-app-pen-test",
+      "name": "Web Application Pen Test",
+      "startingPriceLkr": 95000,
+      "approxPriceUsd": 322,
+      "featured": true,
+      "url": "https://devrious.lk/cybersecurity-services"
+    },
+    {
+      "id": "full-security-audit",
+      "name": "Full Security Audit",
+      "startingPriceLkr": 195000,
+      "approxPriceUsd": 661,
+      "url": "https://devrious.lk/cybersecurity-services"
+    }
+  ],
+  "discovery": {
+    "llmsTxt": "https://devrious.lk/llms.txt",
+    "llmsFullTxt": "https://devrious.lk/llms-full.txt",
+    "ardJson": "https://devrious.lk/.well-known/ard.json",
+    "sitemapXml": "https://devrious.lk/sitemap.xml"
+  }
+}

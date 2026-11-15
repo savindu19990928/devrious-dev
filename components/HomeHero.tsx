@@ -13,7 +13,9 @@ export function HomeHero() {
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#3D030A] md:hidden">
           <img
             src="/images/banners/hero-banner.jpg"
-            alt="Devrious futuristic creative technology portrait"
+            alt="Devrious software engineering studio in Colombo, Sri Lanka"
+            fetchPriority="high"
+            decoding="async"
             className="h-full w-full object-cover object-[70%_20%]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3D030A] via-transparent to-black/20" />
@@ -25,7 +27,9 @@ export function HomeHero() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           src="/images/banners/hero-banner.jpg"
-          alt="Devrious futuristic creative technology portrait"
+          alt="Devrious software engineering studio in Colombo, Sri Lanka"
+          fetchPriority="high"
+          decoding="async"
           className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full object-cover object-right md:block"
         />
 

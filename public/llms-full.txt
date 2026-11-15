@@ -1,0 +1,314 @@
+# Devrious — Complete AI & LLM Knowledge Base (llms-full.txt)
+
+> Devrious is an independent software engineering studio founded in 2024 in Colombo, Sri Lanka by Savindu Shiranjaya and Rangana Munasinghe. We design, build, test, and secure custom websites, business operations software, REST APIs, AI assistants, and end-to-end AI systems — plus 10 ready-to-deploy Pre-Built POS, ERP, hospitality, fleet, social media, and e-commerce systems.
+
+---
+
+## 1. Company Profile & Contact Information
+
+- **Company Name:** Devrious
+- **Tagline:** Software Company · Colombo, Sri Lanka ("Technology with purpose. Innovation with direction.")
+- **Founded:** 2024
+- **Website:** https://devrious.lk
+- **Phone:** +94 70 661 1936
+- **WhatsApp Direct:** https://wa.me/94706611936
+- **Email:** info@devrious.lk
+- **Office Address:** 161/6, Old Kottawa Road, Navinna, Maharagama, Colombo, Sri Lanka
+- **Working Hours:** Monday to Friday, 9:00 AM – 6:00 PM (GMT+5:30)
+- **Founders:**
+  1. **Savindu Shiranjaya** — Co-Founder & Technical Lead. Co-founded Devrious in 2024 to give growing businesses software that is engineered properly — built on a dependable stack, tested before it ships, and supported after launch.
+  2. **Rangana Munasinghe** — Co-Founder & Operations Lead. Co-founded Devrious in 2024 with a focus on turning real operational problems into practical, maintainable systems that teams actually enjoy using.
+- **Vision:** To be the first software partner growing businesses trust — known for systems that are engineered properly, last for years, and genuinely move the business forward.
+- **Mission:** To design, build, test, and support reliable websites, business software, and AI tools that solve real operational problems.
+- **Core Commitments:**
+  - Understand the business before writing a line of code
+  - Ship tested, documented, and secure software
+  - Price transparently and support everything we build
+
+### Core Technology Stack
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion
+- **Backend & API:** Python 3.12, Django 5, Django REST Framework (DRF), FastAPI
+- **Databases & Queues:** PostgreSQL, MySQL, Redis, Celery
+- **Infrastructure & Security:** Docker, Cloudflare WAF/CDN/SSL, GCP, AWS, OCI, OWASP Top 10 hardening
+- **Testing & QA:** PyTest, Selenium end-to-end automation
+
+### 5-Step Engineering Delivery Process
+1. **01. Discover:** We learn your business, users, and goals, then agree scope, timeline, and price in writing.
+2. **02. Design:** Screens and data models are designed and approved before a line of production code.
+3. **03. Build:** Development in short cycles with regular demos, so you see progress every week.
+4. **04. Test:** Automated PyTest and Selenium suites plus manual QA on real devices.
+5. **05. Launch & Support:** Deployment to GCP, OCI, or AWS behind Cloudflare, followed by staff training and support.
+
+---
+
+## 2. Core Engineering Services (5 Services)
+
+### Service 01: Custom Web Development
+- **URL:** https://devrious.lk/services/custom-web-development
+- **Starting Price:** LKR 85,000 (~$288 USD)
+- **Tagline:** Corporate websites, portals and web applications that load fast and rank well.
+- **Description:** From corporate websites to customer portals and full web applications, we build on React, Next.js and Django DRF so your site is fast, secure and easy to grow. Every launch includes search-engine groundwork with Google Search Console and SEMrush plus Cloudflare protection.
+- **Standard Engagement Includes:**
+  - Responsive React / Next.js front-end, designed for your brand
+  - Django DRF back-end with an admin you can manage yourself
+  - SEO setup with Google Search Console and SEMrush
+  - Cloudflare caching, SSL and DDoS protection
+  - Hosting on GCP, OCI or AWS
+- **Deliverables:** Responsive production web application; SEO metadata, sitemap & Search Console readiness; Deployment, SSL & post-launch handover.
+
+### Service 02: Custom Software Development
+- **URL:** https://devrious.lk/services/custom-software-development
+- **Starting Price:** LKR 75,000 (~$254 USD)
+- **Tagline:** Business software shaped around how your team actually works.
+- **Description:** Internal tools, operational platforms and management systems designed after we map your real process — not a generic template. We handle discovery, design, development, testing with PyTest and Selenium, and the training your staff need to adopt it.
+- **Standard Engagement Includes:**
+  - Requirements workshops and process mapping
+  - Role-based dashboards and approval flows
+  - Integration with your existing tools and data
+  - Automated testing with PyTest and Selenium
+  - Staff training and post-launch support
+- **Deliverables:** Custom web/desktop-accessible business system; Role-based staff accounts & training; Automated backups & cloud deployment.
+
+### Service 03: API Development
+- **URL:** https://devrious.lk/services/api-development
+- **Starting Price:** LKR 55,000 (~$186 USD)
+- **Tagline:** Secure, documented APIs that connect apps, devices and partners.
+- **Description:** We design and build REST APIs that connect your mobile apps, hardware devices, payment gateways (PayHere, Stripe) and partner systems — documented, versioned and tested for load and security.
+- **Standard Engagement Includes:**
+  - REST API design with Django DRF
+  - JWT / OAuth authentication and permissions
+  - Interactive API documentation (OpenAPI / Swagger)
+  - Payment gateway and third-party integrations
+  - Load and security testing before release
+- **Deliverables:** Production REST API with interactive docs; Automated PyTest integration test suite; Rate-limiting & security header configuration.
+
+### Service 04: AI Assistants & Tools
+- **URL:** https://devrious.lk/services/ai-assistants-and-tools
+- **Starting Price:** LKR 125,000 (~$424 USD)
+- **Tagline:** Assistants that answer customers, draft content and automate routine work.
+- **Description:** Practical AI assistants trained on your own documents and data — answering customer questions on your website or WhatsApp, drafting content, summarising records and taking repetitive work off your team.
+- **Standard Engagement Includes:**
+  - Customer support chat assistants
+  - Knowledge-base assistants trained on your documents
+  - Content, email and document automation
+  - Website and WhatsApp integration
+  - Usage analytics and conversation review
+- **Deliverables:** Custom-branded AI assistant widget or portal; Curated knowledge base ingestion pipeline; Usage guardrails & analytics dashboard.
+
+### Service 05: AI Systems & AI Development
+- **URL:** https://devrious.lk/services/ai-systems-and-ai-development
+- **Starting Price:** LKR 175,000 (~$593 USD)
+- **Tagline:** End-to-end AI systems — prediction, recognition and intelligent automation.
+- **Description:** Any AI-related system your business needs: demand forecasting, image and document recognition, recommendation engines and intelligent automation, built into your operations with proper data pipelines and monitoring.
+- **Standard Engagement Includes:**
+  - Use-case discovery and feasibility assessment
+  - Data collection and preparation pipelines
+  - Model selection, integration and fine-tuning
+  - AI-powered dashboards and workflows
+  - Monitoring, evaluation and retraining plan
+- **Deliverables:** Production AI workflow & background workers; Monitoring, fallback & error-handling safeguards; Executive reporting & KPI integration.
+
+---
+
+## 3. Ready-to-Deploy Pre-Built Systems (10 Products)
+
+### 3.1 Gym POS & Membership System
+- **URL:** https://devrious.lk/pre-builts/gym-pos
+- **Category:** Point of Sale
+- **Price:** LKR 120,000 (~$407 USD)
+- **Deployment Timeline:** 1–2 Weeks
+- **Summary:** Membership plans, QR check-ins, supplement sales and trainer schedules in one system.
+- **Ideal For:** Gyms and fitness centres; Functional training and CrossFit boxes; Yoga, dance and martial arts studios; Multi-branch fitness chains.
+- **Core Modules:**
+  - Membership plans & renewals (monthly, quarterly, annual, freeze, transfer)
+  - QR / card check-in with live payment status
+  - Counter sales (supplements, drinks & merchandise with stock tracking)
+  - Trainer & class scheduling with commission calculation
+  - Automatic SMS and email payment reminders
+  - Revenue, attendance peak & member churn reports
+- **Included:** Installation and data migration, staff training, receipt printer & barcode scanner setup, 3 months of free support.
+
+### 3.2 Pharmacy POS System
+- **URL:** https://devrious.lk/pre-builts/pharmacy-pos
+- **Category:** Point of Sale
+- **Price:** LKR 85,000 (~$288 USD)
+- **Deployment Timeline:** 1–2 Weeks
+- **Summary:** Batch-wise stock, expiry alerts, supplier GRNs and prescription sales for pharmacies.
+- **Ideal For:** Retail pharmacies; Pharmacy chains; Hospital and channelling-centre pharmacies; Medical and surgical stores.
+- **Core Modules:**
+  - Batch & expiry tracking with FEFO stock selection
+  - Barcode billing with generic and brand-name search
+  - Prescription sales log (doctors, patients & records)
+  - Purchasing, GRNs & supplier payments
+  - Low-stock alerts & suggested purchase lists
+  - Sales & profit reports by item, supplier and cashier
+- **Included:** Installation and item master import, staff training, receipt printer & barcode scanner setup, 3 months of free support.
+
+### 3.3 Tuition Institute Management & POS
+- **URL:** https://devrious.lk/pre-builts/tuition-institute-pos
+- **Category:** Point of Sale
+- **Price:** LKR 95,000 (~$322 USD)
+- **Deployment Timeline:** 1–2 Weeks
+- **Summary:** Class fees, QR attendance, student ID cards and teacher payment calculations.
+- **Ideal For:** Tuition and education institutes; Language and IT training centres; Music and arts academies; Exam preparation classes.
+- **Core Modules:**
+  - Student registration & printable QR ID cards
+  - Class, subject, grade & hall timetable management
+  - Monthly & per-class fee collection with receipts
+  - QR scan-in attendance with unpaid student flags
+  - Automatic teacher share & commission calculations
+  - Parent SMS notifications for payments & absences
+- **Included:** Installation and student data import, staff training, ID card template design, 3 months of free support.
+
+### 3.4 Grocery Shop POS
+- **URL:** https://devrious.lk/pre-builts/grocery-pos
+- **Category:** Point of Sale
+- **Price:** LKR 85,000 (~$288 USD)
+- **Deployment Timeline:** 1 Week
+- **Summary:** Quick barcode and loose-item billing, customer credit book and daily cash-up.
+- **Ideal For:** Grocery and convenience stores; Mini marts; Wholesale and retail shops; Vegetable and dry-goods stores.
+- **Core Modules:**
+  - Barcode & loose-item weight billing
+  - Live inventory & reorder alerts
+  - Customer credit book & payment tracking
+  - Supplier purchases, returns & balances
+  - Daily cash-up reconciliation (cash, card, credit)
+  - Best sellers, slow movers & daily profit reports
+- **Included:** Installation and item import, staff training, printer, scanner & scale setup, 3 months of free support.
+
+### 3.5 Mid-Level Supermarket POS
+- **URL:** https://devrious.lk/pre-builts/supermarket-pos
+- **Category:** Point of Sale
+- **Price:** LKR 125,000 (~$424 USD)
+- **Deployment Timeline:** 2–3 Weeks
+- **Summary:** Multiple counters, cashier shifts, promotions, loyalty points and branch reports.
+- **Ideal For:** Mid-sized supermarkets; Supermarket chains with 2–10 branches; Large convenience stores; Wholesale cash-and-carry.
+- **Core Modules:**
+  - Multi-counter billing with offline fallback
+  - Cashier shift management & opening floats
+  - Promotions, bundles & buy-X-get-Y rules
+  - Phone-linked loyalty programme & points tiers
+  - Purchasing, GRN & supplier settlements
+  - Branch, category & margin reporting
+- **Included:** Installation across counters, data migration from old POS, cashier & manager training, 3 months of free support.
+
+### 3.6 ERP System
+- **URL:** https://devrious.lk/pre-builts/erp-system
+- **Category:** Enterprise & Operations
+- **Price:** LKR 250,000 (~$847 USD)
+- **Deployment Timeline:** 3–4 Weeks
+- **Summary:** Finance, inventory, procurement, sales, HR and production on one connected platform.
+- **Ideal For:** Manufacturers and distributors; Trading and import companies; Multi-department SMEs; Businesses replacing spreadsheets.
+- **Core Modules:**
+  - Finance & accounting (general ledger, payables, receivables, tax)
+  - Multi-location inventory & warehouse valuations
+  - Procurement requisitions, POs & approval hierarchy
+  - Sales quotations, orders, invoicing & CRM
+  - HR, attendance, EPF/ETF & employee payroll
+  - Production planning, BOMs & work-order costing
+- **Included:** Process mapping workshop, data migration, department-level training, 6 months of free support.
+
+### 3.7 Hotel Management System
+- **URL:** https://devrious.lk/pre-builts/hotel-management
+- **Category:** Hospitality & Fleet
+- **Price:** LKR 180,000 (~$610 USD)
+- **Deployment Timeline:** 2–3 Weeks
+- **Summary:** Reservations, room status, housekeeping, restaurant billing and guest folios.
+- **Ideal For:** Hotels and resorts; Boutique villas and guest houses; Serviced apartments; Eco-lodges and holiday bungalows.
+- **Core Modules:**
+  - Reservations & front desk calendar
+  - Room types, seasonal rates & meal packages
+  - Live housekeeping status & maintenance tasks
+  - Restaurant & bar billing posted to guest rooms
+  - Guest folios, split bills & multi-currency invoicing
+  - Commission-free direct booking engine
+- **Included:** Installation and room setup, front desk & housekeeping training, website booking engine, 3 months of free support.
+
+### 3.8 Fleet Management System
+- **URL:** https://devrious.lk/pre-builts/fleet-management
+- **Category:** Hospitality & Fleet
+- **Price:** LKR 120,000 (~$407 USD)
+- **Deployment Timeline:** 2 Weeks
+- **Summary:** Vehicle registry, trip dispatch, fuel logs, maintenance schedules and cost reports.
+- **Ideal For:** Transport and logistics companies; Distribution and delivery fleets; Bus and tour operators; Companies with staff vehicles.
+- **Core Modules:**
+  - Vehicle registry with licence, insurance & emission alerts
+  - Trip dispatch & progress tracking
+  - Driver profiles, licences & assignments
+  - Fuel & trip expense logs per vehicle
+  - Mileage/date maintenance scheduling & repair history
+  - GPS tracker integration & cost-per-km reports
+- **Included:** Installation and vehicle data import, admin & driver training, GPS tracker integration support, 3 months of free support.
+
+### 3.9 Social Media Management System
+- **URL:** https://devrious.lk/pre-builts/social-media-management
+- **Category:** Digital & Commerce
+- **Price:** LKR 125,000 (~$424 USD)
+- **Deployment Timeline:** 2 Weeks
+- **Summary:** Content calendar, approvals, multi-account scheduling and performance analytics.
+- **Ideal For:** Digital marketing agencies; In-house marketing teams; Multi-brand companies; Freelance social media managers.
+- **Core Modules:**
+  - Drag-and-drop content calendar across platforms
+  - Multi-account post scheduling
+  - Client & manager approval workflows
+  - Isolated client workspaces & permissions
+  - Shared tagged media library
+  - Reach, engagement & exportable client reports
+- **Included:** Workspace and account setup, team training, branded client reports, 3 months of free support.
+
+### 3.10 FlexCore E-Commerce Template
+- **URL:** https://devrious.lk/pre-builts/flexcore-ecommerce
+- **Live Demo:** https://flexcore.devrious.lk/
+- **Category:** Digital & Commerce
+- **Price:** LKR 75,000 (~$254 USD)
+- **Deployment Timeline:** 1–2 Weeks
+- **Stack:** Django DRF, React JS, MySQL
+- **Summary:** Ready-to-launch online store with deals, pre-orders, order tracking and warranty.
+- **Ideal For:** Electronics and gadget stores; Home, travel and lifestyle retailers; Beauty and personal-care brands; Retailers moving from social media to a real store.
+- **Core Modules:**
+  - Unlimited products, variants, brands & categories
+  - Fast search & category/brand filters
+  - Guest & account cart checkout with payment gateway
+  - Promotional deals, new arrivals & pre-orders
+  - Online order tracking & warranty claims
+  - Full admin dashboard for orders, products & content
+- **Included:** Branding with your logo and colours, payment gateway integration, product import (up to 200 items), deployment and SSL, 3 months of free support.
+
+---
+
+## 4. Cybersecurity Services & Packages
+
+- **URL:** https://devrious.lk/cybersecurity-services
+- **OWASP Coverage:** OWASP Top 10 web vulnerabilities; Authentication, session & password handling; Access control & privilege escalation (IDOR/BOLA); SQL injection, XSS & CSRF; Exposed secrets, keys & dependencies; Server, cloud & Cloudflare misconfiguration.
+- **Packages:**
+  1. **Secure Code Review — LKR 45,000 (~$153 USD):** Up to 5,000 lines of code, OWASP Top 10 & secure-coding checks, secrets & dependency vulnerability scan, findings report with recommended fixes, one walkthrough call with developers.
+  2. **API Security Assessment — LKR 75,000 (~$254 USD):** Up to 25 endpoints, authentication & authorisation (IDOR/BOLA) testing, input validation & rate-limit checks, OWASP API Security Top 10 coverage, risk-rated report and one retest.
+  3. **Web Application Pen Test (Most Requested) — LKR 95,000 (~$322 USD):** Up to 15 pages or user flows, login/session/access-control testing, injection/XSS/CSRF testing, business-logic abuse scenarios, risk-rated report and one free retest.
+  4. **Full Security Audit — LKR 195,000 (~$661 USD):** Web application and API pen test, secure code review of critical modules, cloud & server configuration review (GCP, OCI, AWS), Cloudflare/WAF hardening recommendations, executive summary and two retest rounds.
+
+---
+
+## 5. Portfolio Case Studies & Client Testimonials
+
+1. **Avenor Apparel (https://devrious.lk/portfolio/avenor-apparel):** Corporate website (https://avenorapparel.lk/) for Avenor Apparel (Pvt) Ltd, uniting Zevora Custom, Gemora Clothing, and Masha.Ts under one corporate identity. Built on React JS, Django DRF, MySQL, Cloudflare, Search Console, SEMrush.
+2. **Zevora Custom (https://devrious.lk/portfolio/zevora-custom):** Animation-rich brand website and custom apparel quote workflow (https://zevoracustom.lk/) for Avenor Apparel (Pvt) Ltd.
+3. **Clothing Production Management System (https://devrious.lk/portfolio/clothing-production-system):** Internal garment factory floor tracking system covering intake, cutting, printing, sewing, QC, and dispatch for Avenor Apparel (Pvt) Ltd.
+4. **Accommodation Management System (https://devrious.lk/portfolio/sunrise-accommodation):** Property management, availability calendar, invoicing, and housekeeping platform for Sunrise Apartments.
+5. **Bus Ticketing Machine Software (https://devrious.lk/portfolio/smart-metro-ticketing):** Offline-first handheld bus ticketing software with thermal printer integration and central Django DRF shift reconciliation for Smart Metro Tech.
+6. **Smart Park n Fly (https://devrious.lk/portfolio/smart-park-n-fly):** Transaction-safe UK airport parking slot reservation platform for Smart Park n Fly (UK).
+7. **FlexCore (https://devrious.lk/portfolio/flexcore):** Devrious's in-house modular e-commerce storefront platform (https://flexcore.devrious.lk/).
+
+### Client Testimonials
+- **Mr. Hirun Mansara (CEO, Avenor Apparel (Pvt) Ltd):** "Devrious built both of our websites — Avenor Apparel and Zevora Custom — and the clothing production management system our factory floor now runs on... Responsive, honest and technically sharp — they are our long-term technology partner."
+- **Mr. Thiranda Kariyawasam (Owner, Sunrise Apartments):** "Before Devrious, our bookings, guest records and payments lived in notebooks and spreadsheets. The Accommodation Management System they built brought everything into one place... My staff learned it in a day, and I can now see occupancy and revenue from my phone."
+- **Mr. Thushara Weerapperuma (Managing Director, Smart Metro Tech):** "Software for bus ticketing machines is unforgiving — it has to work offline, print reliably and reconcile every rupee. Devrious took on that challenge and delivered a stable system our conductors use every day."
+
+---
+
+## 6. Frequently Asked Questions (FAQs)
+
+- **How does pricing work for custom projects?** Every service has a transparent starting price in LKR (from LKR 55,000 for APIs and LKR 75,000–85,000 for custom software and websites). After a free discovery call, we provide a fixed written quote and milestone schedule before work begins.
+- **What technology stack do you build on?** We standardise on React / Next.js + TypeScript for frontends and Python / Django REST Framework with PostgreSQL or MySQL for backends, tested with PyTest and Selenium and deployed on GCP, OCI, or AWS behind Cloudflare.
+- **Do we own the source code and cloud accounts?** Yes. Custom-built projects are deployed to infrastructure you control, with full handover documentation, admin access, and staff training.
+- **Can a Pre-Built system be customised to our workflow?** Yes. Every Pre-Built is built on our modular React + Django DRF stack, so we can brand it to your company, adjust approval rules, add custom reports, or integrate local payment gateways, SMS, and hardware.
+- **How fast can we go live with a Pre-Built?** Most POS systems (Grocery, Pharmacy, Gym, Tuition) and FlexCore go live in 1–2 weeks including item/member data import, hardware setup, and staff training. Larger ERP or multi-lane deployments take 2–4 weeks.
